@@ -80,7 +80,12 @@ function nullIfFileNotFound(callback) {
   try {
     return callback();
   } catch (e) {
-    if (typeof e === "object" && e !== null && "code" in e && (e.code === "ENOENT" || e.code === "EISDIR")) {
+    if (
+      typeof e === "object" &&
+      e !== null &&
+      "code" in e &&
+      (e.code === "ENOENT" || e.code === "EISDIR")
+    ) {
       return null;
     }
     throw e;
@@ -132,7 +137,7 @@ function loadConfig() {
           throw new Error(`Not a string: ${JSON.stringify(v)}`);
         }
         return [k, v];
-      })
+      }),
     );
 
     return {
@@ -253,9 +258,9 @@ function checkGitVersion() {
   const expectedPrefix = "git version ";
   if (!output.startsWith(expectedPrefix)) {
     const msg = `Output of command ${JSON.stringify(
-      command
+      command,
     )} did not start with expected prefix ${JSON.stringify(
-      expectedPrefix
+      expectedPrefix,
     )}. Maybe the text encoding for child process output is not utf8 in this environment?`;
     throw new Error(msg);
   }
@@ -270,7 +275,7 @@ function getRepoRoot() {
   // path for the repo root. Don't ask me how I know...
   if (!fs.statSync(path.join(repoRoot, ".git"), { throwIfNoEntry: false })?.isDirectory()) {
     throw new Error(
-      `Could not determine repo root: got ${JSON.stringify(repoRoot)}, but this is incorrect?`
+      `Could not determine repo root: got ${JSON.stringify(repoRoot)}, but this is incorrect?`,
     );
   }
 
@@ -296,14 +301,14 @@ function checkGitHooks() {
   if (hooksPath !== expectedHooksPath) {
     const msg = [
       `Command ${JSON.stringify(command)} returned ${JSON.stringify(
-        hooksPath
+        hooksPath,
       )}, expected ${JSON.stringify(expectedHooksPath)}.`,
       helpMsg,
     ].join("\n\n");
     throw new Error(msg);
   }
 
-  // console.log(`Git hooks are correctly installed in ${JSON.stringify(expectedHooksPath)}.`)
+  console.log(`Git hooks are correctly installed in ${JSON.stringify(expectedHooksPath)}.`)
   return 0;
 }
 
@@ -347,7 +352,7 @@ function runSecretScan() {
   const previouslyScannedCommitHashes = new Set(cache.safeCommitHashes);
   const filesToSkip = new Set(config.skippedFiles);
   const secretRegexes = Object.fromEntries(
-    Object.entries(config.secretRegexes).map(([k, v]) => [k, new RegExp(v, "g")])
+    Object.entries(config.secretRegexes).map(([k, v]) => [k, new RegExp(v, "g")]),
   );
 
   /** @param {string} matchedText */
@@ -372,13 +377,13 @@ function runSecretScan() {
 
     if (maybeCommitHash === null) {
       const workingTreePaths = nonEmptyLines(runCommand(["git", "status", "--porcelain"])).map(
-        (line) => line.slice(3)
+        (line) => line.slice(3),
       );
       for (const workingTreePath of workingTreePaths) {
         // If the file was deleted, we can ignore it. I was a bit too lazy to
         // parse the status letters of `git status --porcelain`.
         let contents = nullIfFileNotFound(() =>
-          fs.readFileSync(path.join(repoRoot, workingTreePath), { encoding: "utf8" })
+          fs.readFileSync(path.join(repoRoot, workingTreePath), { encoding: "utf8" }),
         );
 
         if (contents !== null) {
@@ -391,7 +396,7 @@ function runSecretScan() {
       }
 
       const stagedPaths = nonEmptyLines(
-        runCommand(["git", "diff", "--staged", ...gitListFileOptions])
+        runCommand(["git", "diff", "--staged", ...gitListFileOptions]),
       );
       for (const stagedPath of stagedPaths) {
         changedFiles.push({
@@ -402,7 +407,7 @@ function runSecretScan() {
       }
     } else {
       const [commitDescription, ...changedPaths] = nonEmptyLines(
-        runCommand(["git", "show", "--oneline", ...gitListFileOptions, maybeCommitHash])
+        runCommand(["git", "show", "--oneline", ...gitListFileOptions, maybeCommitHash]),
       );
       const where = `commit ${JSON.stringify(commitDescription)}`;
       for (const changedPath of changedPaths) {
@@ -440,10 +445,10 @@ function runSecretScan() {
 
           console.log(
             `SECRET DETECTED in ${where}, file ${JSON.stringify(
-              path
+              path,
             )}, line ${line}: regex ${regexName} (${regex}) matched text ${JSON.stringify(
-              matchedText
-            )}`
+              matchedText,
+            )}`,
           );
         }
       }

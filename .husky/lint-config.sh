@@ -5,7 +5,7 @@
 enabled=1
 
 # Directories containing JavaScript projects to be linted, separated by spaces.
-node_dirs='app components e2e lib models public services'
+node_dirs='.'
 
 # Command used to run a lint check.
 check_command='npm run lint-check'
