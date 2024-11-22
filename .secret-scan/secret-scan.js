@@ -308,7 +308,7 @@ function checkGitHooks() {
     throw new Error(msg);
   }
 
-  console.log(`Git hooks are correctly installed in ${JSON.stringify(expectedHooksPath)}.`)
+  console.log(`Git hooks are correctly installed in ${JSON.stringify(expectedHooksPath)}.`);
   return 0;
 }
 
