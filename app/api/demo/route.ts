@@ -1,12 +1,11 @@
 import { NextResponse } from "next/server";
 
-import { getHelloWorld } from "@/services/helloworld";
+import { getProducts } from "@/services/demo";
 
 // GET: Fetch helloworld response
 export async function GET() {
-    const helloWorld = await getHelloWorld();
-    console.log(helloWorld);
-    return NextResponse.json(helloWorld, { status: 200 });
+    const products = await getProducts();
+    return NextResponse.json(products, { status: 200 });
 }
 
 // POST: Example of putting a user in a database (not actually implemented)
