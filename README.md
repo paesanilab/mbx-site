@@ -26,7 +26,7 @@ npm run dev
 
 ## Code Quality and Linting
 
-This project uses ESLint and Prettier to esnure code quality and consistent formatting.
+This project uses ESLint and Prettier to ensure code quality and consistent formatting.
 
 ### Linting Check
 
@@ -57,3 +57,23 @@ npx prettier --write .
 On commit, linting checks are automatically run to ensure code quality. Fix any errors manually or using the above commands, then stage those changes to proceed.
 
 On push, a secret scan is triggered to ensure no sensitive data is accidentally pushed.
+
+## Running Tests
+
+To run Playwright tests, run
+
+```bash
+npm run test
+```
+
+## Contributing Guidelines
+
+Branching + PR Guidelines (Work in Progress)
+
+## Documentation
+
+Link to Documentation (Work in Progress)
+
+## Deployment
+
+This project is deployed via Vercel. 
