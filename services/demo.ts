@@ -18,10 +18,9 @@ export async function updateProduct(id: number, data: Prisma.productsUpdateInput
 
 export async function addProduct(newProduct: Prisma.productsCreateInput) {
     console.log('newproduct', newProduct)
-    const { id, ...productData } = newProduct;
 
     return await prisma.products.create({
-        data: productData,
+        data: newProduct,
     });
 }
 

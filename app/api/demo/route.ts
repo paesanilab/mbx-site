@@ -2,9 +2,8 @@
 
 import { NextResponse } from "next/server";
 
-import { getProducts, getProduct, addProduct, updateProduct, deleteProduct } from "@/services/demo";
-import { Prisma } from "@prisma/client";
 import { productsCreateInputObjectSchema } from "@/prisma/generated/schemas/objects/productsCreateInput.schema";
+import { addProduct, deleteProduct, getProduct, getProducts, updateProduct } from "@/services/demo";
 
 // GET: Fetch all products or a single product by ID
 export async function GET(request: Request) {
@@ -32,16 +31,16 @@ export async function POST(request: Request) {
   return NextResponse.json(createdProduct, { status: 201 });
 }
 
-// // PUT: Update a product
-// export async function PUT(request: Request) {
-//   const { id, ...updatedData } = await request.json();
-//   const updatedProduct = await updateProduct(id, updatedData);
-//   return NextResponse.json(updatedProduct, { status: 200 });
-// }
+// PUT: Update a product
+export async function PUT(request: Request) {
+  const { id, ...updatedData } = await request.json();
+  const updatedProduct = await updateProduct(id, updatedData);
+  return NextResponse.json(updatedProduct, { status: 200 });
+}
 
-// // DELETE: Delete a product
-// export async function DELETE(request: Request) {
-//   const { id } = await request.json();
-//   await deleteProduct(id);
-//   return NextResponse.json({ message: "Product deleted" }, { status: 200 });
-// }
+// DELETE: Delete a product
+export async function DELETE(request: Request) {
+  const { id } = await request.json();
+  await deleteProduct(id);
+  return NextResponse.json({ message: "Product deleted" }, { status: 200 });
+}

@@ -4,6 +4,7 @@ build/
 dist/
 out/
 public/
+prisma/
 next.config.js
 vite.config.ts
 .secret-scan/secret-scan-cache.json
