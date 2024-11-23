@@ -68,9 +68,7 @@
         "import/order": [
             "warn",
             {
-                "alphabetize": { "order": "asc" },
-                "groups": ["builtin", "external", "parent", "sibling", "index", "object", "type"],
-                "newlines-between": "always"
+                "alphabetize": { "order": "asc" }
             }
         ],
 
