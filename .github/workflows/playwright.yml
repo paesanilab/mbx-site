@@ -19,6 +19,8 @@ jobs:
             - uses: actions/setup-node@v3
               with:
                   node-version: 18
+            - name: Set up environment variables
+              run: echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> $GITHUB_ENV
             - name: Install dependencies
               run: npm ci
             - name: Install Playwright Browsers

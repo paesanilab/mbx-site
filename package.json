@@ -12,7 +12,8 @@
         "format": "prettier --write .",
         "lint-fix": "(eslint --fix --cache --report-unused-disable-directives . || true) && prettier --write .",
         "lint-check": "eslint --cache --report-unused-disable-directives . && prettier --check .",
-        "prepare": "husky"
+        "prepare": "husky",
+        "test": "playwright test"
     },
     "dependencies": {
         "@playwright/test": "^1.49.0",
