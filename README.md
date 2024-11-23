@@ -66,6 +66,10 @@ To run Playwright tests, run
 npm run test
 ```
 
+## Deployment
+
+This project is [deployed](https://nextjs-boilerplate-nu-six-50.vercel.app/) via Vercel. The demo page can be found at '/demo'.
+
 ## Contributing Guidelines
 
 Branching + PR Guidelines (Work in Progress)
@@ -73,7 +77,3 @@ Branching + PR Guidelines (Work in Progress)
 ## Documentation
 
 Link to Documentation (Work in Progress)
-
-## Deployment
-
-This project is deployed via Vercel. 
