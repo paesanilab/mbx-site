@@ -54,6 +54,6 @@ npx prettier --write .
 
 ## Committing and Pushing
 
-On commit, linting checks are automatically run to ensure code quality. Fix any errors manually or using the above commands.
+On commit, linting checks are automatically run to ensure code quality. Fix any errors manually or using the above commands, then stage those changes to proceed.
 
 On push, a secret scan is triggered to ensure no sensitive data is accidentally pushed.
