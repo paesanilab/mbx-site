@@ -43,3 +43,5 @@ next-env.d.ts
 .eslintcache
 
 playwright-report
+
+prisma/generated
