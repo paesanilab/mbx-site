@@ -1,5 +1,4 @@
 import { Prisma } from "@prisma/client";
-
 import prisma from "../lib/prisma";
 
 export async function getProducts() {
@@ -8,17 +7,15 @@ export async function getProducts() {
 
 export async function getProduct(where: Prisma.productsWhereUniqueInput) {
     return await prisma.products.findUnique({
-      where,
+        where,
     });
-  }
+}
 
 export async function updateProduct(id: number, data: Prisma.productsUpdateInput) {
     return await prisma.products.update({ where: { id }, data });
 }
 
 export async function addProduct(newProduct: Prisma.productsCreateInput) {
-    console.log('newproduct', newProduct)
-
     return await prisma.products.create({
         data: newProduct,
     });

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import SimpleButton from "../../components/button";
+import SimpleButton from "../../components/demobutton";
 
 import styles from "./page.module.css";
 
