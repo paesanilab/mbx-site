@@ -4,23 +4,21 @@ import Image from "next/image";
 
 import SimpleButton from "../../components/demobutton";
 
-import styles from "./page.module.css";
-
 import { getProducts } from "@/services/demo";
 
 export default async function DemoPage() {
     const products = await getProducts();
 
     return (
-        <div className={styles.page}>
-            <h1 className={styles.title}>Products</h1>
-            <table className={styles.productTable}>
+        <div className="flex flex-col items-center justify-center bg-white p-5">
+            <h1 className="text-center text-black font-bold">Products</h1>
+            <table className="w-1/2 mt-5 mb-5 border-collapse">
                 <thead>
                     <tr>
-                        <th>Image</th>
-                        <th>Name</th>
-                        <th>Status</th>
-                        <th>Price</th>
+                        <th className="p-3 text-left bg-[#7e4747] text-white font-bold">Image</th>
+                        <th className="p-3 text-left bg-[#7e4747] text-white font-bold">Name</th>
+                        <th className="p-3 text-left bg-[#7e4747] text-white font-bold">Status</th>
+                        <th className="p-3 text-left bg-[#7e4747] text-white font-bold">Price</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,17 +30,19 @@ export default async function DemoPage() {
                                     alt={product.name}
                                     width={1000}
                                     height={1000}
-                                    className={styles.productImage}
+                                    className="w-48 h-48 object-cover rounded-lg"
                                 />
                             </td>
-                            <td>{product.name}</td>
-                            <td>{product.status}</td>
-                            <td>${product.price.toString()}</td>
+                            <td className="p-3 text-black">{product.name}</td>
+                            <td className="p-3 text-black">{product.status}</td>
+                            <td className="p-3 text-black">${product.price.toString()}</td>
                         </tr>
                     ))}
                 </tbody>
             </table>
-            <SimpleButton className={styles.demoButton}>Click me!</SimpleButton>
+            <SimpleButton className="bg-green-500 text-white p-3 rounded-lg cursor-pointer hover:bg-green-700">
+                Click me!
+            </SimpleButton>
         </div>
     );
 }
