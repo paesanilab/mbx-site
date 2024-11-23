@@ -70,7 +70,7 @@ npm run test
 
 This project is [deployed](https://nextjs-boilerplate-nu-six-50.vercel.app/) via Vercel. The demo page can be found at '/demo'.
 
-Any changes to the 'main' branch will trigger Playwright tests and auto-deployment to Vercel. 
+Any changes to the 'main' branch will trigger Playwright tests and auto-deployment to Vercel.
 
 ## Contributing Guidelines
 

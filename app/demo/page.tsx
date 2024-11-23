@@ -15,10 +15,10 @@ export default async function DemoPage() {
             <table className="w-1/2 mt-5 mb-5 border-collapse">
                 <thead>
                     <tr>
-                        <th className="p-3 text-left bg-[#7e4747] text-white font-bold">Image</th>
-                        <th className="p-3 text-left bg-[#7e4747] text-white font-bold">Name</th>
-                        <th className="p-3 text-left bg-[#7e4747] text-white font-bold">Status</th>
-                        <th className="p-3 text-left bg-[#7e4747] text-white font-bold">Price</th>
+                        <th className="p-3 text-left bg-slate-600 text-white font-bold">Image</th>
+                        <th className="p-3 text-left bg-slate-600 text-white font-bold">Name</th>
+                        <th className="p-3 text-left bg-slate-600 text-white font-bold">Status</th>
+                        <th className="p-3 text-left bg-slate-600 text-white font-bold">Price</th>
                     </tr>
                 </thead>
                 <tbody>
