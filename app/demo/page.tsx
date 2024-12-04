@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import SimpleButton from "../../components/demobutton";
 
+import { Button } from "@/components/ui/shadcndemobutton";
 import { getProducts } from "@/services/demo";
 
 export default async function DemoPage() {
@@ -40,9 +41,12 @@ export default async function DemoPage() {
                     ))}
                 </tbody>
             </table>
-            <SimpleButton className="bg-green-500 text-white p-3 rounded-lg cursor-pointer hover:bg-green-700">
-                Click me!
-            </SimpleButton>
+            <div className="flex flex-row">
+                <SimpleButton className="bg-green-500 text-white p-3 rounded-lg cursor-pointer hover:bg-green-700">
+                    Click me!
+                </SimpleButton>
+                <Button>Click me too!</Button>
+            </div>
         </div>
     );
 }
