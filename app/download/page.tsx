@@ -1,4 +1,6 @@
 import React from "react";
+
+// Placeholder data for downloads table
 import data from "./downloadPlaceholder.json";
 
 export default function Download() {
@@ -17,7 +19,7 @@ export default function Download() {
                         <span className="w-1/5 flex justify-center">Version</span>
                         <span className="w-1/5 flex justify-center">Upload Date</span>
                         <span className="w-1/5 flex justify-center">Size</span>
-                        <span className="w-1/5 flex justify-center">Type</span>
+                        <span className="w-1/5 flex justify-center">Type Download</span>
                         <span className="w-1/5 flex justify-center">Download</span>
                     </div>
 
