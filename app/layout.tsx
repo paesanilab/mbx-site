@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Quicksand } from "next/font/google";
+import NavBar from '@/app/navbar';
 import "./globals.css";
 
 const quicksand = Quicksand({ subsets: ["latin"] });
@@ -31,6 +32,7 @@ export default function RootLayout({
             <body
                 className={`${geistSans.variable} ${geistMono.variable} ${quicksand.className} antialiased`}
             >
+                <NavBar />
                 {children}
             </body>
         </html>
