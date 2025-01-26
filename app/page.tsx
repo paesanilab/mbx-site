@@ -1,83 +1,63 @@
-import Image from "next/image";
-
 export default function Home() {
     return (
-        <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-            <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-                <Image
-                    className="dark:invert"
-                    src="/next.svg"
-                    alt="Next.js logo"
-                    width={180}
-                    height={38}
-                    priority
-                />
-                <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-                    <li className="mb-2">
-                        Get started by editing{" "}
-                        <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-                            app/page.tsx
-                        </code>
-                        .
-                    </li>
-                    <li>Save and see your changes instantly.</li>
-                </ol>
+        <div className="flex flex-col items-center justify-center min-h-screen p-8">
+            <h1 className="text-center text-6xl font-bold mb-10 w-4/5">
+                Advancing Molecular Dynamics
+            </h1>
+            <h2 className="text-center text-sm font-bold w-4/5 mb-16">
+                MBX is a C++ library that provides an interface for molecular dynamics (MD) drivers,
+                such as LAMMPS and i-PI, to perform classical and path-integral molecular dynamics
+                simulations using data-driven many-body potential energy functions (PEFs)
+            </h2>
 
-                <div className="flex gap-4 items-center flex-col sm:flex-row">
-                    <a
-                        className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-                        href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <Image
-                            className="dark:invert"
-                            src="/vercel.svg"
-                            alt="Vercel logomark"
-                            width={20}
-                            height={20}
-                        />
-                        Deploy now
-                    </a>
-                    <a
-                        className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-                        href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Read our docs
-                    </a>
+            <div className="max-w-7xl w-full bg-[#111840] shadow-md rounded-[2rem] p-6">
+                <div className="text-white">
+                    <h3 className="font-bold text-xl m-8">What is MBX?</h3>
+                    <div className="text-sm m-8">
+                        <p className="mb-3">
+                            MBX is a C++ library that provides an interface for molecular dynamics
+                            (MD) drivers, such as LAMMPS and i-Pl, to perform classical and
+                            path-integral molecular dynamics simulations using data-driven many-body
+                            potential energy functions (PEFs) [1]. The current version of MBX
+                            includes our MB-pol PEF for water and our MB-nrg PEFs for halide and
+                            alkali-metal ions, neat CO2 and mixed CO2/H2O mixtures, neat CH4 and
+                            mixed CH4/H2O mixtures, and neat NH3, as well as our MB-nrg PEFS for
+                            covalently bonded molecules such as alkanes and N-methyl acetamide.
+                        </p>
+                        <p className="mb-3">
+                            MBX acts as a client that returns MB-pol and MB-nrg energies and forces
+                            while the actual molecular dynamics is controlled by the MD driver. In
+                            the case of i-Pl, the communication between MBX and i-PI can be
+                            established in two ways: Internet and Unix domain sockets. Please refer
+                            to the i-PI manual for more details. For LAMMPS, the MBX interface is
+                            added through the combination of specific FIX and PAIR_STYLE commands.
+                            Please refer to the LAMMPS manual for more details.
+                        </p>
+                        <p className="mb-3">
+                            MBX can be downloaded from our GitHub page. The installation
+                            instructions, along with specific details about the interfaces with
+                            LAMMPS and i-PI, are included in the README file.
+                        </p>
+                        <p className="mb-3">
+                            Questions about MBX and the interfaces with LAMMPS and i-PI should be
+                            posted on the MBX Google Group. For classical molecular dynamics
+                            simulations, we recommend using LAMMPS since it provides better
+                            performance with MBX. Since MBX is parallelized using both OpenMP and
+                            MPI, the specific combination of OMP threads and MPI tasks in the LAMMPS
+                            simulations is sensitive to the system's size.
+                        </p>
+                        <p className="mb-3">
+                            For path-integral molecular dynamics simulations, we recommend using
+                            i-Pl since it provides a wide set of methods based on path integrals.
+                        </p>
+                        <p className="mb-3">
+                            The structure and performance of the current version of MBX are
+                            described in Ref. [1]. MBX is under continued development and
+                            optimization. All updates are posted on this page and our GitHub page.
+                        </p>
+                    </div>
                 </div>
-            </main>
-            <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-                <a
-                    className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-                    href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <Image aria-hidden src="/file.svg" alt="File icon" width={16} height={16} />
-                    Learn
-                </a>
-                <a
-                    className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-                    href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <Image aria-hidden src="/window.svg" alt="Window icon" width={16} height={16} />
-                    Examples
-                </a>
-                <a
-                    className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-                    href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <Image aria-hidden src="/globe.svg" alt="Globe icon" width={16} height={16} />
-                    Go to nextjs.org →
-                </a>
-            </footer>
+            </div>
         </div>
     );
 }
