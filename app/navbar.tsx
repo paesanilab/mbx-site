@@ -42,14 +42,13 @@ export default function NavBar() {
                 })}
             </div>
             <div className="ml-auto bg-[#3552F2] mr-2 p-1 pl-6 pr-6 rounded-[2rem]">
-                <a
-                    href="https://github.com/paesanilab/MBX"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-bold"
+                <Link
+                    key="Download"
+                    href="/download"
+                    className="font-bold hover:text-[#5483BF]"
                 >
                     Download
-                </a>
+                </Link>
             </div>
         </div>
     );
