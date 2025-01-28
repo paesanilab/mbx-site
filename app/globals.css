@@ -4,6 +4,49 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background: radial-gradient(
+            circle at 70% 10%,
+            #d5565c 15px,
+            rgba(97, 132, 218, 0.1) 25%,
+            transparent 100%
+        ),
+        radial-gradient(
+            circle at 0% 50%,
+            #d5565c 15px,
+            rgba(97, 132, 218, 0.1) 25%,
+            transparent 100%
+        ),
+        radial-gradient(
+            circle at 25% 25%,
+            #d5565c 15px,
+            rgba(97, 132, 218, 0.1) 25%,
+            transparent 100%
+        ),
+        radial-gradient(
+            circle at 95% 65%,
+            #d5565c 15px,
+            rgba(97, 132, 218, 0.1) 25%,
+            transparent 100%
+        ),
+        radial-gradient(
+            circle at 15% 105%,
+            #d5565c 15px,
+            rgba(97, 132, 218, 0.1) 25%,
+            transparent 100%
+        ),
+        radial-gradient(
+            circle at 60% 55%,
+            #d5565c 15px,
+            rgba(97, 132, 218, 0.1) 25%,
+            transparent 100%
+        ),
+        radial-gradient(
+            circle at 70% 105%,
+            #d5565c 15px,
+            rgba(97, 132, 218, 0.1) 25%,
+            transparent 100%
+        ),
+        #6184da;
 }
 
 @layer base {
