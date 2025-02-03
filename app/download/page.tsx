@@ -5,10 +5,10 @@ import data from "./downloadPlaceholder.json";
 
 export default function Download() {
     return (
-        <div className="bg-[#030625] text-white min-h-screen h-full">
+        <div className="bg-[#030625] text-white min-h-screen h-full rounded-[40px] m-[20px] md:m-[70px]">
             <div className="flex flex-col px-[20px] py-[40px] md:px-[80px] md:py-[80px]">
                 {/* Page Title */}
-                <h2 className="text-[#60A7FF] text-3xl pb-[20px] md:pb-[50px]">
+                <h2 className="text-[#60A7FF] font-bold text-3xl pb-[20px] md:pb-[50px]">
                     Version Downloads
                 </h2>
 
@@ -27,7 +27,7 @@ export default function Download() {
                     {data.map((item, index) => (
                         <div
                             key={index}
-                            className="flex justify-between h-[65px] rounded-sm items-center bg-[#4057E6] border-b border-[#4057E6] bg-opacity-10 text-sm"
+                            className="flex justify-between h-[65px] rounded-sm items-center bg-[#4057E6] border-b border-[#4057E6] bg-opacity-10 text-md font-medium"
                         >
                             <span className="w-1/5 flex justify-center">{item.version}</span>
                             <span className="w-1/5 flex justify-center">{item.date}</span>
@@ -64,7 +64,7 @@ export default function Download() {
                                 <span>{item.size}</span>
                             </div>
                             <div className="flex justify-between mt-2">
-                                <span className="font-bold">Type:</span>
+                                <span className="font-bold">Type Download:</span>
                                 <span>{item.type}</span>
                             </div>
                             <div className="flex justify-center mt-4">
@@ -78,7 +78,7 @@ export default function Download() {
 
                 {/* Packages Section */}
                 <div className="flex flex-col pt-[50px]">
-                    <h3 className="text-2xl pb-[30px]">Packages</h3>
+                    <h3 className="text-2xl font-bold pb-[30px]">Packages</h3>
                     <p className="text-sm">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
                         fermentum.
