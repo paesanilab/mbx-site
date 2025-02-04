@@ -44,7 +44,7 @@ export default function Home() {
                             simulations, we recommend using LAMMPS since it provides better
                             performance with MBX. Since MBX is parallelized using both OpenMP and
                             MPI, the specific combination of OMP threads and MPI tasks in the LAMMPS
-                            simulations is sensitive to the system's size.
+                            simulations is sensitive to the system&apos;s size.
                         </p>
                         <p className="mb-3">
                             For path-integral molecular dynamics simulations, we recommend using

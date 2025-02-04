@@ -25,10 +25,10 @@ npm run dev
 ```
 
 ### Enter the following into your browser:
+
 ```bash
 http://localhost:3000
 ```
-
 
 ## Code Quality and Linting
 

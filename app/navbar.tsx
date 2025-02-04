@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import clsx from "clsx";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const links = [
     { name: "Home", href: "/" },
@@ -42,11 +42,7 @@ export default function NavBar() {
                 })}
             </div>
             <div className="ml-auto bg-[#3552F2] mr-2 p-1 pl-6 pr-6 rounded-[2rem]">
-                <Link
-                    key="Download"
-                    href="/download"
-                    className="font-bold hover:text-[#5483BF]"
-                >
+                <Link key="Download" href="/download" className="font-bold hover:text-[#5483BF]">
                     Download
                 </Link>
             </div>
