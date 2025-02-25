@@ -1,32 +1,32 @@
 [
     {
-        "name": "Name",
-        "role": "role",
+        "name": "John Doe",
+        "role": "Chemist",
         "image": ""
     },
     {
         "name": "Name",
-        "role": "role",
+        "role": "Role",
         "image": ""
     },
     {
         "name": "Name",
-        "role": "role",
+        "role": "Role",
         "image": ""
     },
     {
         "name": "Name",
-        "role": "role",
+        "role": "Role",
         "image": ""
     },
     {
         "name": "Name",
-        "role": "role",
+        "role": "Role",
         "image": ""
     },
     {
         "name": "Name",
-        "role": "role",
+        "role": "Role",
         "image": ""
     }
 ]

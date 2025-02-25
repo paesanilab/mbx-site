@@ -1,6 +1,7 @@
 import React from "react";
 import curData from "./about_placeholder_c.json";
 import forData from "./about_placeholder_f.json";
+import Contributors from "./Contributors";
 
 export default function About() {
     return (
@@ -10,11 +11,15 @@ export default function About() {
                 <h2 className="text-[#FFFFFF] font-bold text-3xl pb-[20px] md:pb-[50px]">
                     Paesani Research Group
                 </h2>
+                <p className="pb-[40px]">
+                    We are a theoretical chemistry group working at the intersection of quantum chemistry, statistical mechanics, and computer science.
+                    <br /><br />
+                    We are interested in developing new methods and software to predict the behavior of complex molecular systems at different length and time scales.
+                </p>
 
-                /**We are a theoretical chemistry group working at the intersection of quantum chemistry, statistical mechanics, and computer science.
-
-We are interested in developing new methods and software to predict the behavior of complex molecular systems at different length and time scales. */
+                {/* Client Component */}
+                <Contributors />
             </div>
-        /</div>
+        </div>
     );
 }
