@@ -1,12 +1,9 @@
+import Molecular from "@/components/molecular";
+
 export default function Home() {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen p-6 md:p-8">
-            <h1 className="text-center text-3xl sm:text-5xl md:text-6xl font-bold mt-10">
-                Advancing
-            </h1>
-            <h1 className="text-center text-3xl sm:text-5xl md:text-6xl font-bold mb-10">
-                Molecular Dynamics
-            </h1>
+            <Molecular />
             <h2 className="text-center text-xs md:text-sm font-bold md:w-4/5 mb-16">
                 MBX is a C++ library that provides an interface for molecular dynamics (MD) drivers,
                 such as LAMMPS and i-PI, to perform classical and path-integral molecular dynamics
