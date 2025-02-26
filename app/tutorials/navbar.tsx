@@ -13,11 +13,11 @@ const links = [
     { name: "Coverage", href: "/" },
 ];
 
-export default function TutorialsSideBar() {
+export function TutorialsSideBar() {
     const pathname = usePathname();
 
     return (
-        <div className="bg-[#030625] text-white rounded-[20px] w-[288px] mt-[70px] ml-[45px]">
+        <div className="bg-[#030625] text-white rounded-[20px] min-w-[205px] max-w-[288px] mt-[70px] ml-[45px]">
             <div className="flex flex-col p-[20px]">
                 <h1 className="text-[22px] text-[#A5A5A5] pb-[11px]">Tutorials</h1>
                 <div className="flex flex-col border-l-2 border-[#60A7FF] pl-[25px]">
@@ -38,4 +38,8 @@ export default function TutorialsSideBar() {
             </div>
         </div>
     );
+}
+
+export function MobileSideBar() {
+    return <div></div>;
 }

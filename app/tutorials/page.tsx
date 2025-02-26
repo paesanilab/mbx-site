@@ -3,9 +3,11 @@ import React from "react";
 export default function Tutorials() {
     return (
         <div>
-            <div className="bg-[#030625] text-white min-h-screen h-full rounded-[40px] my-[70px] ml-[32px] mr-[45px]">
-                <div className="flex flex-col p-[80px]">
-                    <h2 className="font-bold text-3xl pb-[50px]">October 2024 (Version x.0)</h2>
+            <div className="bg-[#030625] text-white min-h-screen h-full rounded-[40px] m-[20px] md:my-[70px] md:ml-[32px] md:mr-[45px]">
+                <div className="flex flex-col p-[20px] md:p-[80px]">
+                    <h2 className="font-bold text-3xl pb-[30px] md:pb-[50px]">
+                        October 2024 (Version x.0)
+                    </h2>
                     <p className="pb-[30px]">
                         The following requirements need to be fulfilled in order to successfully
                         install the software:
@@ -27,7 +29,7 @@ export default function Tutorials() {
                         sourcing sourceme.sh:
                     </p>
                     <div className="bg-[#D1D1D1] text-black rounded-[10px] mb-[30px]">
-                        <p className="m-[35px]">
+                        <p className="m-[10px] md:m-[35px]">
                             <ul>
                                 <li>git clone https://github.com/paesanilab/MBX.git</li>
                                 <li>cd MBX/</li>
