@@ -5,12 +5,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const links = [
-    { name: "Compilation and Installation", href: "/tutorials" },
-    { name: "Testing", href: "/" },
-    { name: "JSON File", href: "/" },
-    { name: "Main Executables", href: "/" },
-    { name: "Interfaces", href: "/" },
-    { name: "Coverage", href: "/" },
+    { name: "Compilation and Installation", href: "/tutorials/compilation" },
+    { name: "Testing", href: "/tutorials/testing" },
+    { name: "JSON File", href: "/tutorials/jsonfile" },
+    { name: "Main Executables", href: "/tutorials/executables" },
+    { name: "Interfaces", href: "/tutorials/interfaces" },
+    { name: "Coverage", href: "/tutorials/coverage" },
 ];
 
 export function TutorialsSideBar() {
@@ -38,8 +38,4 @@ export function TutorialsSideBar() {
             </div>
         </div>
     );
-}
-
-export function MobileSideBar() {
-    return <div></div>;
 }

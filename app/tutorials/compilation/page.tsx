@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Tutorials() {
+export default function Compilation() {
     return (
         <div>
             <div className="bg-[#030625] text-white min-h-screen h-full rounded-[40px] m-[20px] md:my-[70px] md:ml-[32px] md:mr-[45px]">
