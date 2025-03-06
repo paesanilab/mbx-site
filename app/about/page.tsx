@@ -1,7 +1,8 @@
 import React from "react";
-import curData from "./about_placeholder_c.json";
-import forData from "./about_placeholder_f.json";
 import Contributors from "./Contributors";
+// import curData from "./about_placeholder_c.json";
+// import forData from "./about_placeholder_f.json";
+//not needed -> already implemented in Contributors.tsx
 
 export default function About() {
     return (

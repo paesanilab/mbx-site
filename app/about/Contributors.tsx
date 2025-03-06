@@ -14,13 +14,13 @@ export default function Contributors() {
             <div className="flex border-b border-gray-500 mb-6">
                 <button
                     className={`pb-2 px-4 font-semibold ${activeTab === "current" ? "border-b-2 border-blue-500" : "text-gray-400"}`}
-                    onClick={() => setActiveTab("current")}
+                    onClick={() => {setActiveTab("current")}}
                 >
                     Current Contributors
                 </button>
                 <button
                     className={`pb-2 px-4 font-semibold ${activeTab === "former" ? "border-b-2 border-blue-500" : "text-gray-400"}`}
-                    onClick={() => setActiveTab("former")}
+                    onClick={() => {setActiveTab("former")}}
                 >
                     Former Contributors
                 </button>
