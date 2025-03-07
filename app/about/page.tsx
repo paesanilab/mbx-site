@@ -13,9 +13,12 @@ export default function About() {
                     Paesani Research Group
                 </h2>
                 <p className="pb-[40px]">
-                    We are a theoretical chemistry group working at the intersection of quantum chemistry, statistical mechanics, and computer science.
-                    <br /><br />
-                    We are interested in developing new methods and software to predict the behavior of complex molecular systems at different length and time scales.
+                    We are a theoretical chemistry group working at the intersection of quantum
+                    chemistry, statistical mechanics, and computer science.
+                    <br />
+                    <br />
+                    We are interested in developing new methods and software to predict the behavior
+                    of complex molecular systems at different length and time scales.
                 </p>
 
                 {/* Client Component */}
