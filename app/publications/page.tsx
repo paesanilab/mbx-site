@@ -13,14 +13,16 @@ export default function Publications() {
                     <div className="flex">
                         {/* Left column for text */}
                         <div className="w-1/2 pr-4">
+                            <p className="mb-1">[Author 1, Author 2, ...]</p>
+                            <p className="mb-1">1 January 2025</p>
                             <p className="mb-1">
-                                [Author 1, Author 2, ...]
-                            </p>
-                            <p className="mb-1 text-blue-500">
-                                1 January 2025
+                                <a href="#" className="text-blue-500 underline">
+                                    [Link Placeholder]
+                                </a>
                             </p>
                             <p className="text-sm mb-4">
-                                [Short summary placeholder text describing the publication’s content...]
+                                [Short summary placeholder text describing the publication’s
+                                content...]
                             </p>
                         </div>
                         {/* Right column for image placeholder */}
@@ -38,14 +40,16 @@ export default function Publications() {
                     <div className="flex">
                         {/* Left column for text */}
                         <div className="w-1/2 pr-4">
+                            <p className="mb-1">[Author 1, Author 2, ...]</p>
+                            <p className="mb-1">1 January 2025</p>
                             <p className="mb-1">
-                                [Author 1, Author 2, ...]
-                            </p>
-                            <p className="mb-1 text-blue-500">
-                                1 January 2025
+                                <a href="#" className="text-blue-500 underline">
+                                    [Link Placeholder]
+                                </a>
                             </p>
                             <p className="text-sm mb-4">
-                                [Short summary placeholder text describing the publication’s content...]
+                                [Short summary placeholder text describing the publication’s
+                                content...]
                             </p>
                         </div>
                         {/* Right column for image placeholder */}
@@ -63,14 +67,16 @@ export default function Publications() {
                     <div className="flex">
                         {/* Left column for text */}
                         <div className="w-1/2 pr-4">
+                            <p className="mb-1">[Author 1, Author 2, ...]</p>
+                            <p className="mb-1">1 January 2025</p>
                             <p className="mb-1">
-                                [Author 1, Author 2, ...]
-                            </p>
-                            <p className="mb-1 text-blue-500">
-                                1 January 2025
+                                <a href="#" className="text-blue-500 underline">
+                                    [Link Placeholder]
+                                </a>
                             </p>
                             <p className="text-sm mb-4">
-                                [Short summary placeholder text describing the publication’s content...]
+                                [Short summary placeholder text describing the publication’s
+                                content...]
                             </p>
                         </div>
                         {/* Right column for image placeholder */}
