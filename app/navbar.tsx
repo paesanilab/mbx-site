@@ -73,7 +73,6 @@ export function MobileNavBar() {
 
     return (
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            {/* Trigger: hamburger + logo */}
             <SheetTrigger className="bg-[#111840] flex items-center justify-between p-2 m-4 rounded-lg">
                 <AlignJustify size={36} className="text-white" />
                 <Image src="/mbx-logo.png" alt="MBX logo" width={80} height={35} />
