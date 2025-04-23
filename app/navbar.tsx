@@ -71,16 +71,6 @@ export function MobileNavBar() {
     const pathname = usePathname();
     const isTutorialsActive = pathname.startsWith("/tutorials");
 
-    const closeSheet = () => {
-        setIsOpen(false);
-    };
-    const toggleTutorials = () => {
-        setIsTutorialsOpen(!isTutorialsOpen);
-    };
-    const toggle = (i: number) => {
-        setIsOpen(false); /* close after click */
-    };
-
     return (
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
             {/* Trigger: hamburger + logo */}
