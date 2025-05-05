@@ -6,8 +6,8 @@ import React, { useState } from "react";
 import data from "@/content/content.json"
 
 export default function Contributors() {
-    const curData = data["about"]["current"];
-    const forData = data["about"]["former"];
+    const curData = data.about.current;
+    const forData = data.about.former;
     const [activeTab, setActiveTab] = useState("current");
     const contributors = activeTab === "current" ? curData : forData;
 

@@ -1,12 +1,10 @@
+import Image from "next/image";
 import React from "react";
 
-import Image from "next/image";
-//import { getContent } from "@/lib/getcontent";
 import data from "@/content/content.json"
 
 export default function Publications() {
-    const publications = data["publications"]["items"];
-    const numPublications = publications.length;
+    const publications = data.publications.items;
 
     function Item({index}: {index: number}) {
         const item = publications[index];
@@ -26,7 +24,7 @@ export default function Publications() {
                         <p className="text-sm mb-4">{item.description}</p>
                     </div>
                     {/* Right column for image placeholder */}
-                    {item.img_src != "" &&
+                    {item.img_src !== "" &&
                         <div className="w-1/2">
                             <div className="w-full h-[150px] flex items-center justify-center text-black rounded-[40px] relative">
                                 {/*Image here*/}
@@ -50,8 +48,8 @@ export default function Publications() {
                 {/* Page Title */}
                 <h2 className="font-bold text-3xl pb-[20px] md:pb-[50px]">Publications</h2>
 
-                {[...Array(numPublications)].map((_, i) => (
-                    <Item index={i} />
+                {publications.map((_, i) => (
+                    <Item key={i} index={i} />
                 ))}
             </div>
         </div>

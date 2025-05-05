@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import data from "@/content/content.json";
 
 export default function FAQPage() {
-    const faqs = data["faq"]["items"];
+    const faqs = data.faq.items;
     const [openIndex, setOpenIndex] = useState<number | null>(null);
     const toggle = (i: number) => {
         setOpenIndex(openIndex === i ? null : i);
