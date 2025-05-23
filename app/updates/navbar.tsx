@@ -26,7 +26,6 @@ export function UpdatesSideBar() {
                             >
                                 <p>
                                     {update.version}
-                                    <span className="text-[#A5A5A5]"> ({update.date})</span>
                                 </p>
                             </Link>
                         );

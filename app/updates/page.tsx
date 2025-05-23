@@ -14,7 +14,7 @@ export default function UpdatesIndex() {
                 href={`/updates/${u.id}`}
                 className="text-blue-400 hover:underline"
               >
-                {u.date} – {u.version}
+                {u.date}-{u.version}
               </Link>
             </li>
           ))}
