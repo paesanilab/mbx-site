@@ -1,11 +1,9 @@
 import { notFound } from "next/navigation";
 import versions from "../versions_placeholder.json";
 
-export default async function UpdatePage({ params }: { params: { id: string } }) {
+export default function UpdatePage({ params }: { params: { id: string } }) {
 
-    const { id } = await params;
-
-    const update = versions.updates.find((u) => u.id === id);
+    const update = versions.updates.find((u) => u.id === params.id);
 
     if (!update) return notFound();
 
