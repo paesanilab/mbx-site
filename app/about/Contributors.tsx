@@ -19,7 +19,9 @@ export default function Contributors() {
               ? "border-b-2 border-blue-500"
               : "text-gray-400"
           }`}
-          onClick={() => setActiveTab("current")}
+          onClick={() => {
+            setActiveTab("current");
+          }}
         >
           Current Contributors
         </button>
@@ -29,7 +31,9 @@ export default function Contributors() {
               ? "border-b-2 border-blue-500"
               : "text-gray-400"
           }`}
-          onClick={() => setActiveTab("former")}
+          onClick={() => {
+            setActiveTab("former");
+          }}
         >
           Former Contributors
         </button>
