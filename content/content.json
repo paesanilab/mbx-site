@@ -7,23 +7,33 @@
     "publications": {
         "items": [
             {
-                "title":"[Publication Title Placeholder]",
-                "author":"[Author 1, Author 2, ...]",
-                "date":"1 January 2025",
-                "link":"https://www.google.com",
-                "link_title":"[Link Placeholder]",
-                "description":"[Short summary placeholder text describing the publication’s content...]",
-                "img_src":"/images/img_placeholder.jpg",
+                "title":"211. Resolving the spectral signatures of strong hydrogen bonding in fluoride hydration.",
+                "author":"R. Rashmi, B. Savala, H. Agnew, R. Savoj, F. Paesani",
+                "date":"22 April 2025",
+                "link":"https://chemrxiv.org/engage/chemrxiv/article-details/680521d7e561f77ed4fdb2ab",
+                "link_title":"Publication Link",
+                "description":"The fluoride ion forms some of the strongest hydrogen bonds in aqueous solution, making its hydration shell an ideal system to probe the interplay between ion--water interactions, hydrogen-bond dynamics, and nuclear quantum effects (NQEs). In this study, we integrate MB-nrg data-driven many-body potential energy functions with advanced quantum dynamics simulations to uncover how many-body interactions and NQEs shape the structure and vibrational response of hydrated fluoride. Our analysis reveals that short-range three-body interactions between the ion and surrounding water molecules are critical for capturing the infrared spectral features of the first hydration shell, particularly in the OH-stretch and libration regions. We identify distinct reorientation dynamics of OH bonds that give rise to the bifurcation of the libration band. While NQEs induce a redshift in OH-stretching frequencies, they have minimal influence on orientational and translational dynamics. These results underscore the importance of rigorous many-body treatments to achieve predictive accuracy in modeling ion hydration and interpreting vibrational spectra.",
+                "img_src":"/images/pub211.png",
                 "img_alt":"image"
             },
             {
-                "title":"[Publication Title Placeholder]",
-                "author":"[Author 1, Author 2, ...]",
-                "date":"1 January 2025",
-                "link":"https://www.google.com",
-                "link_title":"[Link Placeholder]",
-                "description":"Lorem ipsum...",
-                "img_src":"/images/cool_photo.jpg",
+                "title":"210. Molecular insights into the influence of ions on water structure. II. Halide ions in solution.",
+                "author":"H. Agnew, R. Savoj, R. Rashmi, B. Savala, F. Paesani",
+                "date":"17 April 2025",
+                "link":"https://chemrxiv.org/engage/chemrxiv/article-details/67ff35b150018ac7c5941c3a",
+                "link_title":"Publication Link",
+                "description":"Understanding how halide ions affect the structure and dynamics of water at the molecular level is essential for a wide range of chemical, biological, and environmental processes. In this study, we use molecular dynamics simulations with MB-nrg data-driven many-body potential energy functions to investigate the hydration properties of halide ions in bulk water. The results reveal distinct trends in hydration structure, residence times, dipole moment distributions, and infrared spectral signatures, reflecting variations in ion size, charge density, and polarizability. In particular, fluoride promotes uniquely strong and more directional hydrogen bonds with the surrounding water molecules, which leads to substantial spectral shifts and slower water exchange dynamics. In contrast, heavier halides induce only minimal perturbations on the water hydrogen-bond network, even within the first hydration shell. These insights provide a quantitative framework for understanding ion-specific effects in aqueous systems and set the stage for future studies of more complex environments such as aqueous interfaces and confined systems.",
+                "img_src":"/images/pub210.png",
+                "img_alt":"image"
+            },
+            {
+                "title":"209. Density-functionalized QM/MM delivers chemical accuracy for solvated systems.",
+                "author":"X. Chen, J. Martinez, X. Shao, M. Riera, F. Paesani, O. Andreussi, M. Pavanello",
+                "date":"26 November 2024",
+                "link":"https://arxiv.org/abs/2411.17844",
+                "link_title":"Publication Link",
+                "description":"We present a reformulation of QM/MM as a fully quantum mechanical theory of interacting subsystems, all treated at the level of density functional theory (DFT). For the MM subsystem, which lacks orbitals, we assign an ad hoc electron density and apply orbital-free DFT functionals to describe its quantum properties. The interaction between the QM and MM subsystems is also treated using orbital-free density functionals, accounting for Coulomb interactions, exchange, correlation, and Pauli repulsion. Consistency across QM and MM subsystems is ensured by employing data-driven, many-body MM force fields that faithfully represent DFT functionals. Applications to water-solvated systems demonstrate that this approach achieves unprecedented, very rapid convergence to chemical accuracy as the size of the QM subsystem increases. We validate the method with several pilot studies, including water bulk, water clusters (prism hexamer and pentamers), solvated glucose, a palladium aqua ion, and a wet monolayer of MoS2.",
+                "img_src":"/images/pub209.png",
                 "img_alt":"image"
             }
         ]
@@ -31,89 +41,81 @@
     "faq": {
         "items": [
             {
-                "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-                "answer": "Placeholder"
+                "question": "I get an undefined reference to symbol 'dlclose@@GLIBC_x.y.z' when compiling LAMMPS with MBX.",
+                "answer": "For some reason your linker is not able to link the GLIBC library properly. This is often fixed by adding the line 'LIB += -ldl' immediately after the line 'LIB =' to Makefile.mpi_mbx inside USER-MBX."
             },
             {
-                "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-                "answer": "Placeholder"
+                "question": "MBX seems very slow, is something wrong?",
+                "answer": "To get the best performance, please check all of these things:\n1) Do not disable compiler optimizations. When you run `configure` don't pass `--disable-optimization`.\n2) For most systems, run on a single MPI rank, with up to 32 OpenMP threads. (which you can set with `OMP_NUM_THREADS=32`)\n4) Don't oversubscribe your cores, or use hardware-level parallelism features. If your processor has 16 physical cores, don't use more OpenMP threads than that.\n5) Bind your threads to nearby cores. It can be helpful to set `OMP_PROC_BIND=\"close\"` and `OMP_PLACES=\"cores\"`.\n6) If your research allows, run multiple shorter simulations rather than one long one. For most equilibrium-state studies, such as RDFs, spectroscopy, etc. many short trajectories work just as well as one long trajectory. Because MBX does not scale well past 32 OpenMP threads for normal box sizes, much greater throughput will be achieved by running multiple simulations with fewer cores rather than one simulation with many cores. For example, if you have 256 cores available, you are better off running 8 simulations each with 32 cores rather than 1 simulation with 256 cores."
             },
             {
-                "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-                "answer": "Placeholder"
-            },
-            {
-                "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-                "answer": "Placeholder"
-            },
-            {
-                "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-                "answer": "Placeholder"
+                "question": "Have a quetion that isn't answered here?",
+                "answer": "Feel free to ask questions about MBX in our google group: https://groups.google.com/g/mbx-users."
             }
         ]
     },
     "about": {
         "current": [
             {
-                "name": "John Doe",
-                "role": "Chemist",
-                "image": ""
+                "name": "Francesco Paesani",
+                "role": "Group Leader",
+                "image": "/images/francesco.png"
             },
             {
-                "name": "Name",
-                "role": "Role",
-                "image": ""
+                "name": "Xinmao Lyu",
+                "role": "Ph.D. Student",
+                "image": "/images/xinmao.jpg"
             },
             {
-                "name": "Name",
-                "role": "Role",
-                "image": ""
+                "name": "Pei-Te Wang",
+                "role": "Ph.D. Student",
+                "image": "/images/peite.png"
             },
             {
-                "name": "Name",
-                "role": "Role",
-                "image": ""
+                "name": "Jiwon Huh",
+                "role": "Ph.D. Student",
+                "image": "/images/jiwon.jpg"
             },
             {
-                "name": "Name",
-                "role": "Role",
-                "image": ""
+                "name": "Suman Saha",
+                "role": "Ph.D. Student",
+                "image": "/images/suman.jpg"
             },
             {
-                "name": "Name",
-                "role": "Role",
-                "image": ""
+                "name": "Vibhu Singh",
+                "role": "Ph.D. Student",
+                "image": "/images/vibhu.jpg"
             }
         ],
         "former": [
             {
-                "name": "Walter White",
-                "role": "Chemist",
+                "name": "Matt Agee",
+                "role": "Undergraduate Student",
                 "image": ""
             },
             {
-                "name": "Name",
-                "role": "Role",
+                "name": "Wei Lin",
+                "role": "Ph.D. Student",
                 "image": ""
             },
             {
-                "name": "Name",
-                "role": "Role",
+                "name": "Sebastian Amara",
+                "role": "Undergraduate Student",
                 "image": ""
             },
             {
-                "name": "Name",
-                "role": "Role",
+                "name": "Zhishang Luo",
+                "role": "Undergraduate Student",
                 "image": ""
             },
             {
-                "name": "Name",
-                "role": "Role",
+                "name": "Daniel Arismendi-Arrieta",
+                "role": "Visiting Student",
                 "image": ""
             },
             {
-                "name": "Name",
-                "role": "Role",
+                "name": "Zhonghuan Luo",
+                "role": "Undergraduate Student",
                 "image": ""
             }
         ]
@@ -121,11 +123,11 @@
     "download": {
         "versions": [
             {
-                "version": "1.1.1",
-                "date": "MM/DD/YYYY",
+                "version": "1.2",
+                "date": "20 August 2024",
                 "size": "0.0MB",
-                "type": "[Text Here]",
-                "link": ""
+                "type": "GitHub",
+                "link": "https://github.com/paesanilab/MBX"
             },
             {
                 "version": "1.1.1",
