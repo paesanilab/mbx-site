@@ -1,6 +1,6 @@
 import React from "react";
 
-import data from "@/content/content.json"
+import data from "@/content/content.json";
 
 export default function Compilation() {
     const elems = data.tutorials.testing;
@@ -10,13 +10,9 @@ export default function Compilation() {
                 <div className="flex flex-col p-[20px] md:p-[80px] text-xs md:text-base">
                     {elems.map((item, index) => (
                         <div key={index}>
-                            <h2 className="text-3xl font-bold pb-[20px]">
-                                {item.subheading}
-                            </h2>
-                            
-                            <p className="mb-3 whitespace-pre-wrap pb-[30px]">
-                                {item.text}
-                            </p>
+                            <h2 className="text-3xl font-bold pb-[20px]">{item.subheading}</h2>
+
+                            <p className="mb-3 whitespace-pre-wrap pb-[30px]">{item.text}</p>
                         </div>
                     ))}
                 </div>

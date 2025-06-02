@@ -80,9 +80,7 @@ export default function Download() {
                 {/* Packages Section */}
                 <div className="flex flex-col pt-[50px]">
                     <h3 className="text-2xl font-bold pb-[30px]">Packages</h3>
-                    <p className="text-sm">
-                        {content.download.bottom_description}
-                    </p>
+                    <p className="text-sm">{content.download.bottom_description}</p>
                 </div>
             </div>
         </div>

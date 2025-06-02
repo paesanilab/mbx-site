@@ -7,34 +7,34 @@
     "publications": {
         "items": [
             {
-                "title":"211. Resolving the spectral signatures of strong hydrogen bonding in fluoride hydration.",
-                "author":"R. Rashmi, B. Savala, H. Agnew, R. Savoj, F. Paesani",
-                "date":"22 April 2025",
-                "link":"https://chemrxiv.org/engage/chemrxiv/article-details/680521d7e561f77ed4fdb2ab",
-                "link_title":"Publication Link",
-                "description":"The fluoride ion forms some of the strongest hydrogen bonds in aqueous solution, making its hydration shell an ideal system to probe the interplay between ion--water interactions, hydrogen-bond dynamics, and nuclear quantum effects (NQEs). In this study, we integrate MB-nrg data-driven many-body potential energy functions with advanced quantum dynamics simulations to uncover how many-body interactions and NQEs shape the structure and vibrational response of hydrated fluoride. Our analysis reveals that short-range three-body interactions between the ion and surrounding water molecules are critical for capturing the infrared spectral features of the first hydration shell, particularly in the OH-stretch and libration regions. We identify distinct reorientation dynamics of OH bonds that give rise to the bifurcation of the libration band. While NQEs induce a redshift in OH-stretching frequencies, they have minimal influence on orientational and translational dynamics. These results underscore the importance of rigorous many-body treatments to achieve predictive accuracy in modeling ion hydration and interpreting vibrational spectra.",
-                "img_src":"/images/pub211.png",
-                "img_alt":"image"
+                "title": "211. Resolving the spectral signatures of strong hydrogen bonding in fluoride hydration.",
+                "author": "R. Rashmi, B. Savala, H. Agnew, R. Savoj, F. Paesani",
+                "date": "22 April 2025",
+                "link": "https://chemrxiv.org/engage/chemrxiv/article-details/680521d7e561f77ed4fdb2ab",
+                "link_title": "Publication Link",
+                "description": "The fluoride ion forms some of the strongest hydrogen bonds in aqueous solution, making its hydration shell an ideal system to probe the interplay between ion--water interactions, hydrogen-bond dynamics, and nuclear quantum effects (NQEs). In this study, we integrate MB-nrg data-driven many-body potential energy functions with advanced quantum dynamics simulations to uncover how many-body interactions and NQEs shape the structure and vibrational response of hydrated fluoride. Our analysis reveals that short-range three-body interactions between the ion and surrounding water molecules are critical for capturing the infrared spectral features of the first hydration shell, particularly in the OH-stretch and libration regions. We identify distinct reorientation dynamics of OH bonds that give rise to the bifurcation of the libration band. While NQEs induce a redshift in OH-stretching frequencies, they have minimal influence on orientational and translational dynamics. These results underscore the importance of rigorous many-body treatments to achieve predictive accuracy in modeling ion hydration and interpreting vibrational spectra.",
+                "img_src": "/images/pub211.png",
+                "img_alt": "image"
             },
             {
-                "title":"210. Molecular insights into the influence of ions on water structure. II. Halide ions in solution.",
-                "author":"H. Agnew, R. Savoj, R. Rashmi, B. Savala, F. Paesani",
-                "date":"17 April 2025",
-                "link":"https://chemrxiv.org/engage/chemrxiv/article-details/67ff35b150018ac7c5941c3a",
-                "link_title":"Publication Link",
-                "description":"Understanding how halide ions affect the structure and dynamics of water at the molecular level is essential for a wide range of chemical, biological, and environmental processes. In this study, we use molecular dynamics simulations with MB-nrg data-driven many-body potential energy functions to investigate the hydration properties of halide ions in bulk water. The results reveal distinct trends in hydration structure, residence times, dipole moment distributions, and infrared spectral signatures, reflecting variations in ion size, charge density, and polarizability. In particular, fluoride promotes uniquely strong and more directional hydrogen bonds with the surrounding water molecules, which leads to substantial spectral shifts and slower water exchange dynamics. In contrast, heavier halides induce only minimal perturbations on the water hydrogen-bond network, even within the first hydration shell. These insights provide a quantitative framework for understanding ion-specific effects in aqueous systems and set the stage for future studies of more complex environments such as aqueous interfaces and confined systems.",
-                "img_src":"/images/pub210.png",
-                "img_alt":"image"
+                "title": "210. Molecular insights into the influence of ions on water structure. II. Halide ions in solution.",
+                "author": "H. Agnew, R. Savoj, R. Rashmi, B. Savala, F. Paesani",
+                "date": "17 April 2025",
+                "link": "https://chemrxiv.org/engage/chemrxiv/article-details/67ff35b150018ac7c5941c3a",
+                "link_title": "Publication Link",
+                "description": "Understanding how halide ions affect the structure and dynamics of water at the molecular level is essential for a wide range of chemical, biological, and environmental processes. In this study, we use molecular dynamics simulations with MB-nrg data-driven many-body potential energy functions to investigate the hydration properties of halide ions in bulk water. The results reveal distinct trends in hydration structure, residence times, dipole moment distributions, and infrared spectral signatures, reflecting variations in ion size, charge density, and polarizability. In particular, fluoride promotes uniquely strong and more directional hydrogen bonds with the surrounding water molecules, which leads to substantial spectral shifts and slower water exchange dynamics. In contrast, heavier halides induce only minimal perturbations on the water hydrogen-bond network, even within the first hydration shell. These insights provide a quantitative framework for understanding ion-specific effects in aqueous systems and set the stage for future studies of more complex environments such as aqueous interfaces and confined systems.",
+                "img_src": "/images/pub210.png",
+                "img_alt": "image"
             },
             {
-                "title":"209. Density-functionalized QM/MM delivers chemical accuracy for solvated systems.",
-                "author":"X. Chen, J. Martinez, X. Shao, M. Riera, F. Paesani, O. Andreussi, M. Pavanello",
-                "date":"26 November 2024",
-                "link":"https://arxiv.org/abs/2411.17844",
-                "link_title":"Publication Link",
-                "description":"We present a reformulation of QM/MM as a fully quantum mechanical theory of interacting subsystems, all treated at the level of density functional theory (DFT). For the MM subsystem, which lacks orbitals, we assign an ad hoc electron density and apply orbital-free DFT functionals to describe its quantum properties. The interaction between the QM and MM subsystems is also treated using orbital-free density functionals, accounting for Coulomb interactions, exchange, correlation, and Pauli repulsion. Consistency across QM and MM subsystems is ensured by employing data-driven, many-body MM force fields that faithfully represent DFT functionals. Applications to water-solvated systems demonstrate that this approach achieves unprecedented, very rapid convergence to chemical accuracy as the size of the QM subsystem increases. We validate the method with several pilot studies, including water bulk, water clusters (prism hexamer and pentamers), solvated glucose, a palladium aqua ion, and a wet monolayer of MoS2.",
-                "img_src":"/images/pub209.png",
-                "img_alt":"image"
+                "title": "209. Density-functionalized QM/MM delivers chemical accuracy for solvated systems.",
+                "author": "X. Chen, J. Martinez, X. Shao, M. Riera, F. Paesani, O. Andreussi, M. Pavanello",
+                "date": "26 November 2024",
+                "link": "https://arxiv.org/abs/2411.17844",
+                "link_title": "Publication Link",
+                "description": "We present a reformulation of QM/MM as a fully quantum mechanical theory of interacting subsystems, all treated at the level of density functional theory (DFT). For the MM subsystem, which lacks orbitals, we assign an ad hoc electron density and apply orbital-free DFT functionals to describe its quantum properties. The interaction between the QM and MM subsystems is also treated using orbital-free density functionals, accounting for Coulomb interactions, exchange, correlation, and Pauli repulsion. Consistency across QM and MM subsystems is ensured by employing data-driven, many-body MM force fields that faithfully represent DFT functionals. Applications to water-solvated systems demonstrate that this approach achieves unprecedented, very rapid convergence to chemical accuracy as the size of the QM subsystem increases. We validate the method with several pilot studies, including water bulk, water clusters (prism hexamer and pentamers), solvated glucose, a palladium aqua ion, and a wet monolayer of MoS2.",
+                "img_src": "/images/pub209.png",
+                "img_alt": "image"
             }
         ]
     },

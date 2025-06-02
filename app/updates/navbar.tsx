@@ -24,9 +24,7 @@ export function UpdatesSideBar() {
                                     "font-bold": pathname === href,
                                 })}
                             >
-                                <p>
-                                    {update.version}
-                                </p>
+                                <p>{update.version}</p>
                             </Link>
                         );
                     })}
