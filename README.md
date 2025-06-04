@@ -1,6 +1,6 @@
 # Paesani MBX Site
 
-This README explains how to use the `content.json` file to drive the site’s pages, where to place images and downloadable files, and how to update content without modifying component code directly.
+This README explains how to use the `content.json` file to edit the site’s pages, where to place images and downloadable files, and how to update content without modifying component code directly.
 
 ---
 
