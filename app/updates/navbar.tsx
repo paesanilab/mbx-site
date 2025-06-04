@@ -3,11 +3,19 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import versions from "./versions_placeholder.json"; // update path as needed
+import content from "@/content/content.json";
+
+type Update = {
+    id: string;
+    version: string;
+    date: string;
+    releaseNotes: { type: string; description: string }[];
+    newFeatures: string[];
+};
 
 export function UpdatesSideBar() {
     const pathname = usePathname();
-    const updates = versions.updates;
+    const updates = content.updates as unknown as Update[];
 
     return (
         <div className="bg-[#030625] text-white rounded-[20px] min-w-[205px] max-w-[288px] mt-[70px] ml-[45px]">

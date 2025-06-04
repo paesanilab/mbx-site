@@ -1,11 +1,26 @@
 import { notFound } from "next/navigation";
-import versions from "../versions_placeholder.json";
+import React from "react";
+import content from "@/content/content.json";
 
-export default async function UpdatePage({ params }: { params: Promise<{ id: string }> }) {
-    const { id } = await params;
+type ReleaseNote = { type: string; description: string };
+type Update = {
+    id: string;
+    version: string;
+    date: string;
+    releaseNotes: ReleaseNote[];
+    newFeatures: string[];
+};
 
-    const update = versions.updates.find((u) => u.id === id);
-    if (!update) return notFound();
+export default function UpdatePage({ params }: { params: { id: string } }) {
+    const { id } = params;
+
+    // Cast content.updates to our typed Update[] without using `any`
+    const updates = content.updates as unknown as Update[];
+
+    const update = updates.find((u) => u.id === id);
+    if (!update) {
+        return notFound();
+    }
 
     return (
         <div className="space-y-8">

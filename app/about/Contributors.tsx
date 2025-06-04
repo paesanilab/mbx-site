@@ -1,11 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import React, { useState } from "react";
 import data from "@/content/content.json";
 
+type Person = { name: string; role: string; image: string };
+
 export default function Contributors() {
-    const curData = data.about.current;
-    const forData = data.about.former;
+    const curData = data.about.current as Person[];
+    const forData = data.about.former as Person[];
     const [activeTab, setActiveTab] = useState<"current" | "former">("current");
     const contributors = activeTab === "current" ? curData : forData;
 
@@ -42,13 +45,16 @@ export default function Contributors() {
                         key={index}
                         className="relative bg-gray-400 h-[300px] rounded-lg flex flex-col justify-end overflow-hidden"
                     >
-                        {/* Only render the photo if person.image is non-empty */}
+                        {/* Only render the photo if person.image is non‑empty */}
                         {person.image && (
-                            <img
-                                src={person.image}
-                                alt={person.name}
-                                className="absolute inset-0 w-full h-full object-cover"
-                            />
+                            <div className="absolute inset-0 w-full h-full">
+                                <Image
+                                    src={person.image}
+                                    alt={person.name}
+                                    fill
+                                    className="object-contain"
+                                />
+                            </div>
                         )}
 
                         {/* Name & Role at the bottom; stays on top of the image */}
