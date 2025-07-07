@@ -52,7 +52,7 @@ export default function Contributors() {
                                     src={person.image}
                                     alt={person.name}
                                     fill
-                                    className="object-contain"
+                                    className="object-cover"
                                 />
                             </div>
                         )}

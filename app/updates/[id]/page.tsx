@@ -10,6 +10,10 @@ interface Update {
     newFeatures: string[];
 }
 
+export function generateStaticParams() {
+    return (content as { updates: Update[] }).updates
+  }
+
 export default async function UpdatePage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
 
