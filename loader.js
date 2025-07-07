@@ -1,7 +1,7 @@
-import { basePath } from "./next.config";
+import nextConfig from "./next.config"
 
 function imageLoader({ src }) {
-    return `${basePath}/${src}`;
+    return `${nextConfig.basePath}${src}`;
   }
   
   module.exports = imageLoader;
