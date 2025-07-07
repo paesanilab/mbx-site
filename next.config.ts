@@ -5,7 +5,8 @@ const nextConfig: NextConfig = {
     images: {
         loader: "custom",
         loaderFile: "./loader.js"
-    }
+    },
+    basePath: "paesani-mbx-site/"
 };
 
 export default nextConfig;
