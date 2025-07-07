@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
         loader: "custom",
         loaderFile: "./loader.js"
     },
-    basePath: "paesani-mbx-site/"
+    basePath: "/paesani-mbx-site"
 };
 
 export default nextConfig;

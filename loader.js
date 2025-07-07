@@ -1,5 +1,7 @@
+import { basePath } from "./next.config";
+
 function imageLoader({ src }) {
-    return src; // REPLACE WITH YOUR IMAGE DIRECTORY
+    return `${basePath}/${src}`;
   }
   
   module.exports = imageLoader;
