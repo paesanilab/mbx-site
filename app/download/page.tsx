@@ -3,7 +3,7 @@
 import React from "react";
 import content from "@/content/downloads.json";
 
-type DownloadEntry{
+type DownloadEntry = {
     version:string;
     date: string;
     type?: string;
