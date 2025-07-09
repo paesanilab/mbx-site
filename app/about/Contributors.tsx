@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import data from "@/content/content.json";
+import data from "@/content/about.json";
 
 type Person = { name: string; role: string; image: string };
 
 export default function Contributors() {
-    const curData = data.about.current as Person[];
-    const forData = data.about.former as Person[];
+    const curData = data.current as Person[];
+    const forData = data.former as Person[];
     const [activeTab, setActiveTab] = useState<"current" | "former">("current");
     const contributors = activeTab === "current" ? curData : forData;
 
@@ -43,13 +43,13 @@ export default function Contributors() {
                 {contributors.map((person, index) => (
                     <div
                         key={index}
-                        className="relative bg-gray-400 h-[300px] rounded-lg flex flex-col justify-end overflow-hidden"
+                        className="relative bg-gray-400 rounded-lg flex flex-col justify-end overflow-hidden max-w-200"
                     >
                         {/* Only render the photo if person.image is non‑empty */}
                         {person.image && (
-                            <div className="absolute inset-0 w-full h-full">
+                            <div className="w-full h-[200px] relative">
                                 <Image
-                                    src={person.image}
+                                    src={"/people/" + person.image}
                                     alt={person.name}
                                     fill
                                     className="object-cover"

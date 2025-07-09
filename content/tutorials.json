@@ -1,0 +1,66 @@
+{
+    "comp": [
+        {
+            "subheading": "October 2024 (Version x.0)",
+            "text": "The following requirements need to be fulfilled in order to successfully install the software:\n\n- g++/gcc v4.9 or higher\n- icpc/icc v2018 or higher [optional but recommended]\n- MPI compilers [optional, needed only for LAMMPS]\n- FFTW libraries\n- GSL libraries [optional, needed only for normal_modes executable]\n- Read the entire README before doing anything!"
+        },
+        {
+            "subheading": "Setup",
+            "text": "The home directory of MBX will be referred to as $MBX_HOME. You must set this environment variable, which can be exported either manually or by sourcing sourceme.sh:\n\ngit clone https://github.com/paesanilab/MBX.git\ncd MBX/\nexport MBX_HOME=$PWD"
+        },
+        {
+            "subheading": "Compilation",
+            "text": "MBX has different compilation instructions depending on how you plan to use it:\n- For use with i-PI, Python, Fortran, or standalone, perform a basic installation\n- For use with LAMMPS, perform an alternative MBX_MPI installation"
+        }
+    ],
+    "testing": [
+        {
+            "subheading": "Example subheading (Testing)",
+            "text": "example text\nexample text"
+        },
+        {
+            "subheading": "Example subheading",
+            "text": "example text\nexample text"
+        }
+    ],
+    "jsn": [
+        {
+            "subheading": "Example subheading (JSON File)",
+            "text": "example text\nexample text"
+        },
+        {
+            "subheading": "Example subheading",
+            "text": "example text\nexample text"
+        }
+    ],
+    "executable": [
+        {
+            "subheading": "Example subheading (Main Executables)",
+            "text": "example text\nexample text"
+        },
+        {
+            "subheading": "Example subheading",
+            "text": "example text\nexample text"
+        }
+    ],
+    "interfaces": [
+        {
+            "subheading": "Example subheading (Interfaces)",
+            "text": "example text\nexample text"
+        },
+        {
+            "subheading": "Example subheading",
+            "text": "example text\nexample text"
+        }
+    ],
+    "coverage": [
+        {
+            "subheading": "Example subheading (Coverage)",
+            "text": "example text\nexample text"
+        },
+        {
+            "subheading": "Example subheading",
+            "text": "example text\nexample text"
+        }
+    ]
+}

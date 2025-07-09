@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React from "react";
-import data from "@/content/content.json";
+import data from "@/content/publications.json";
 
 export default function Publications() {
-    const publications = data.publications.items;
+    const publications = data.items;
 
     function Item({ index }: { index: number }) {
         const item = publications[index];
@@ -25,7 +25,7 @@ export default function Publications() {
                         <div className="w-2/5">
                             <div className="w-full h-[150px] flex items-center justify-center text-black rounded-[40px] relative overflow-hidden">
                                 <Image
-                                    src={item.img_src}
+                                    src={"publications/"+item.img_src}
                                     alt={item.img_alt}
                                     fill
                                     className="object-contain"

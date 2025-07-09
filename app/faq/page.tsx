@@ -3,10 +3,10 @@
 import clsx from "clsx";
 import React, { useState } from "react";
 
-import data from "@/content/content.json";
+import data from "@/content/faq.json";
 
 export default function FAQPage() {
-    const faqs = data.faq.items;
+    const faqs = data.items;
     const [openIndex, setOpenIndex] = useState<number | null>(null);
     const toggle = (i: number) => {
         setOpenIndex(openIndex === i ? null : i);

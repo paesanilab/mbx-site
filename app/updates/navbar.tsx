@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import content from "@/content/content.json";
+import content from "@/content/updates.json";
 
 type Update = {
     id: string;

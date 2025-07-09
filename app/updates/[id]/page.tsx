@@ -1,6 +1,6 @@
 // app/updates/[id]/page.tsx
 import { notFound } from "next/navigation";
-import content from "@/content/content.json";
+import content from "@/content/updates.json";
 
 interface Update {
     id: string;

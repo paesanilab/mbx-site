@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import content from "@/content/content.json";
+import content from "@/content/updates.json";
 
 type Update = {
     id: string;
