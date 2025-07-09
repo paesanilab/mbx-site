@@ -1,9 +1,9 @@
 import Molecular from "@/components/molecular";
 
-import data from "@/content/content.json";
+import data from "@/content/home.json";
 
 export default function Home() {
-    const homeData = data.home;
+    const homeData = data;
     return (
         <div className="flex flex-col items-center justify-center min-h-screen p-6 md:p-8">
             <Molecular />
