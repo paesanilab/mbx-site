@@ -3,9 +3,9 @@
 import React from "react";
 import content from "@/content/downloads.json";
 
-interface DownloadEntry{
+type DownloadEntry{
     version:string;
-    date:string;
+    date: string;
     type?: string;
     patch_notes?: string;
     download_link?: string;
@@ -14,9 +14,9 @@ interface DownloadEntry{
 export default function Download() {
     const content_data: DownloadEntry[] = content.versions;
 
-    let data: DownloadEntry[] = [];
+    const data: DownloadEntry[] = [];
     for (const content_item of content_data){
-        let item = {...content_item}
+        const item = {...content_item}
         item.type ??= "Source ZIP"
         item.patch_notes ??= `https://github.com/paesanilab/MBX-dev/releases/tag/v${item.version}`
         item.download_link ??= `https://github.com/paesanilab/MBX-dev/releases/tag/v${item.version}`

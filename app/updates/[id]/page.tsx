@@ -2,7 +2,7 @@
 import { notFound } from "next/navigation";
 import content from "@/content/updates.json";
 
-interface Update {
+type Update {
     id: string;
     version: string;
     date: string;
