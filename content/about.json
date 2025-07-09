@@ -1,0 +1,40 @@
+{
+    "current": [
+        {
+            "name": "Francesco Paesani",
+            "role": "Group Leader",
+            "image": "fpaesani.png"
+        },
+        {
+            "name": "Xinmao Lyu",
+            "role": "Ph.D. Student",
+            "image": "xliu.jpg"
+        }
+    ],
+    "former": [
+        {
+            "name": "Matt Agee",
+            "role": "Undergraduate Student"
+        },
+        {
+            "name": "Wei Lin",
+            "role": "Ph.D. Student"
+        },
+        {
+            "name": "Sebastian Amara",
+            "role": "Undergraduate Student"
+        },
+        {
+            "name": "Zhishang Luo",
+            "role": "Undergraduate Student"
+        },
+        {
+            "name": "Daniel Arismendi-Arrieta",
+            "role": "Visiting Student"
+        },
+        {
+            "name": "Zhonghuan Luo",
+            "role": "Undergraduate Student"
+        }
+    ]
+}
