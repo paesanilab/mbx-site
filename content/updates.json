@@ -1,6 +1,26 @@
 {
     "updates": [
         {
+            "version": "1.3.0",
+            "date": "2025-07-09",
+            "releaseNotes": [
+                {
+                    "type": "Major update",
+                    "description": "MBX 1.3 contains numerous improvements, mostly to performance."
+                }
+            ],
+            "changelog": [
+                "Added a variety of new configuration options to enable optional optimizations.",
+                "Evaluation of MB-pol 2- and 3-body PIPs can now use SIMD instructions if enabled with new configuration options. Depending on your hardware, this produces anywhere between a 1.25x and 2.0x overall speed-up for the entire MB-pol PEF.",
+                "Refactored dispersion and Lennard-Jones to be more efficient on large boxes.",
+                "Intel Threading Building Blocks library can be used if enabled with new configuration options, significantly improving performance on large boxes.",
+                "Intel intrinsic math functions can now be used if enabled with new configuration options, significantly improving performance on large boxes.",
+                "Many small improvements to OpenMP parallelism.",
+                "Many small performance improvements, including many that are most impactful on large boxes.",
+                "Can now specify the 2-body PIP cutoff separately from the real-space cutoff used for dispersion and electrostatics."
+            ]
+        },
+        {
             "version": "1.2.0",
             "date": "2024-08-20",
             "releaseNotes": [

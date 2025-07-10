@@ -2,14 +2,14 @@
     "items": [
         {
             "question": "I get an undefined reference to symbol 'dlclose@@GLIBC_x.y.z' when compiling LAMMPS with MBX.",
-            "answer": "For some reason your linker is not able to link the GLIBC library properly. This is often fixed by adding the line 'LIB += -ldl' immediately after the line 'LIB =' to Makefile.mpi_mbx inside USER-MBX."
+            "answer": "For some reason, your linker is not able to link the GLIBC library properly. This is often fixed by adding the line 'LIB += -ldl' immediately after the line 'LIB =' to Makefile.mpi_mbx inside USER-MBX."
         },
         {
             "question": "MBX seems very slow, is something wrong?",
-            "answer": "To get the best performance, please check all of these things:\n1) Do not disable compiler optimizations. When you run `configure` don't pass `--disable-optimization`.\n2) For most systems, run on a single MPI rank, with up to 32 OpenMP threads. (which you can set with `OMP_NUM_THREADS=32`)\n4) Don't oversubscribe your cores, or use hardware-level parallelism features. If your processor has 16 physical cores, don't use more OpenMP threads than that.\n5) Bind your threads to nearby cores. It can be helpful to set `OMP_PROC_BIND=\"close\"` and `OMP_PLACES=\"cores\"`.\n6) If your research allows, run multiple shorter simulations rather than one long one. For most equilibrium-state studies, such as RDFs, spectroscopy, etc. many short trajectories work just as well as one long trajectory. Because MBX does not scale well past 32 OpenMP threads for normal box sizes, much greater throughput will be achieved by running multiple simulations with fewer cores rather than one simulation with many cores."
+            "answer": "To get the best performance, please check all of these things:<br/>1) Do not disable compiler optimizations. When you run `configure` don't pass `--disable-optimization`.<br/>2) For most systems, run on a single MPI rank, with up to 32 OpenMP threads. (which you can set with `OMP_NUM_THREADS=32`)<br/>4) Don't oversubscribe your cores, or use hardware-level parallelism features. If your processor has 16 physical cores, don't use more OpenMP threads than that.<br/>5) Bind your threads to nearby cores. It can be helpful to set `OMP_PROC_BIND=\"close\"` and `OMP_PLACES=\"cores\"`.<br/>6) If your research allows, run multiple shorter simulations rather than one long one. For most equilibrium-state studies, such as RDFs, spectroscopy, etc. many short trajectories work just as well as one long trajectory. Because MBX does not scale well past 32 OpenMP threads for normal box sizes, much greater throughput will be achieved by running multiple simulations with fewer cores rather than one simulation with many cores."
         },
         {
-            "question": "Have a quetion that isn't answered here?",
+            "question": "What if my question is not answered here?",
             "answer": "Feel free to ask questions about MBX in our google group: https://groups.google.com/g/mbx-users."
         }
     ]
