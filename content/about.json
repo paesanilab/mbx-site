@@ -9,6 +9,31 @@
             "name": "Xinmao Lyu",
             "role": "Ph.D. Student",
             "image": "xliu.jpg"
+        },
+        {
+            "name": "Ethan Bull-Vulpe",
+            "role":"Ph.D. Student",
+            "image": "ebullvul.jpg"
+        },
+        {
+            "name": "Xuanyu Zhu",
+            "role": "Ph.D. Student",
+            "image": "xzhu.jpg"
+        },
+        {
+            "name": "Richa Rashmi",
+            "role": "Ph.D. Student",
+            "image": "rrashmi.jpg"
+        },
+        {
+            "name": "Henry Agnew",
+            "role": "Ph.D. Student",
+            "image": "hagnew.jpg"
+        },
+        {
+            "name": "Ruihan Zhou",
+            "role": "Ph.D. Student",
+            "image": "rzhou.png"
         }
     ],
     "former": [
@@ -35,6 +60,10 @@
         {
             "name": "Zhonghuan Luo",
             "role": "Undergraduate Student"
+        },
+        {
+            "name": "Marc Riera",
+            "role": "Postdoctoral Researcher"
         }
     ]
 }

@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import content from "@/content/updates.json";
 
 type Update = {
-    id: string;
     version: string;
     date: string;
     releaseNotes: { type: string; description: string }[];
@@ -23,10 +22,10 @@ export function UpdatesSideBar() {
                 <h1 className="text-[22px] text-[#A5A5A5] pb-[11px]">Update Versions</h1>
                 <div className="flex flex-col border-l-2 border-[#60A7FF] pl-[25px]">
                     {updates.map((update) => {
-                        const href = `/updates/${update.id}`;
+                        const href = `/updates/${update.version}`;
                         return (
                             <Link
-                                key={update.id}
+                                key={update.version}
                                 href={href}
                                 className={clsx("text-[20px] py-[7px] hover:font-bold", {
                                     "font-bold": pathname === href,

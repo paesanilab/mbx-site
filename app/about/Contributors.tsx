@@ -39,11 +39,11 @@ export default function Contributors() {
             </div>
 
             {/* Contributors Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="flex flex-wrap gap-6 justify-center">
                 {contributors.map((person, index) => (
                     <div
                         key={index}
-                        className="relative bg-gray-400 rounded-lg flex flex-col justify-end overflow-hidden max-w-200"
+                        className="relative bg-gray-400 rounded-lg flex flex-col justify-end overflow-hidden w-[200px]"
                     >
                         {/* Only render the photo if person.image is non‑empty */}
                         {person.image && (

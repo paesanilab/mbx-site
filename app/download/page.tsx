@@ -1,25 +1,26 @@
 "use client";
 
 import React from "react";
-import content from "@/content/downloads.json";
+import content from "@/content/updates.json";
 
-type DownloadEntry = {
-    version:string;
+type Update = {
+    version: string;
     date: string;
+    releaseNotes: { type: string; description: string }[];
     type?: string;
     patch_notes?: string;
     download_link?: string;
 }
 
 export default function Download() {
-    const content_data: DownloadEntry[] = content.versions;
+    const content_data: Update[] = content.updates;
 
-    const data: DownloadEntry[] = [];
+    const data: Update[] = [];
     for (const content_item of content_data){
         const item = {...content_item}
         item.type ??= "Source ZIP"
-        item.patch_notes ??= `https://github.com/paesanilab/MBX-dev/releases/tag/v${item.version}`
-        item.download_link ??= `https://github.com/paesanilab/MBX-dev/releases/tag/v${item.version}`
+        item.patch_notes ??= `https://github.com/paesanilab/MBX/releases/tag/v${item.version}`
+        item.download_link ??= `https://github.com/paesanilab/MBX/archive/refs/tags/v${item.version}.zip`
         data.push(item)
     }
 
@@ -40,7 +41,7 @@ export default function Download() {
                         <span className="w-1/5 flex justify-center">Version</span>
                         <span className="w-1/5 flex justify-center">Upload Date</span>
                         <span className="w-1/5 flex justify-center">Type Download</span>
-                        <span className="w-1/5 flex justify-center">Patch Notes</span>
+                        <span className="w-1/5 flex justify-center">Release Notes</span>
                         <span className="w-1/5 flex justify-center">Download</span>
                     </div>
 
@@ -60,7 +61,7 @@ export default function Download() {
                                     href={item.patch_notes}
                                     className="bg-[#60A7FF] text-white font-bold px-4 py-1 rounded-3xl hover:bg-[#508fd4] transition text-xs md:px-6 md:py-2 md:text-sm"
                                 >
-                                    Patch Notes
+                                    Release Notes
                                 </a>
                             </span>
                             <span className="w-1/5 flex justify-center">
@@ -69,7 +70,7 @@ export default function Download() {
                                     download
                                     className="bg-[#60A7FF] text-white font-bold px-4 py-1 rounded-3xl hover:bg-[#508fd4] transition text-xs md:px-6 md:py-2 md:text-sm"
                                 >
-                                    Download
+                                    Download v{item.version}
                                 </a>
                             </span>
                         </div>
@@ -100,7 +101,7 @@ export default function Download() {
                                     href={item.patch_notes}
                                     className="bg-[#60A7FF] text-white font-bold px-6 py-2 rounded-3xl hover:bg-[#508fd4] transition text-sm"
                                 >
-                                    Patch Notes
+                                    Release Notes
                                 </a>
                             </div>
                             <div className="flex justify-center mt-4">
@@ -109,7 +110,7 @@ export default function Download() {
                                     download
                                     className="bg-[#60A7FF] text-white font-bold px-6 py-2 rounded-3xl hover:bg-[#508fd4] transition text-sm"
                                 >
-                                    Download
+                                    Download v{item.version}
                                 </a>
                             </div>
                         </div>
