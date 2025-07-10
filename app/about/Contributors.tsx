@@ -43,7 +43,7 @@ export default function Contributors() {
                 {contributors.map((person, index) => (
                     <div
                         key={index}
-                        className="relative bg-gray-400 rounded-lg flex flex-col justify-end overflow-hidden w-[200px]"
+                        className="relative bg-white rounded-lg flex flex-col justify-start overflow-hidden w-[200px] shadow-gray-100 hover:shadow-lg transition-shadow duration-300"
                     >
                         {/* Only render the photo if person.image is non‑empty */}
                         {person.image && (
