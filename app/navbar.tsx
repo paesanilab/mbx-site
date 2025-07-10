@@ -33,13 +33,14 @@ export function NavBar() {
     return (
         <div className="flex items-center justify-start bg-[#111840] p-1 text-white m-4 ml-8 mr-8 rounded-lg max-lg:text-sm">
             <div className="flex space-x-5 lg:space-x-10 xl:space-x-14 items-center">
-                <Image
+                <Link href={"/"}><Image
                     src="/mbx-logo.png"
                     width={93}
                     height={41}
                     alt="MBX logo"
                     className="mr-0 lg:mr-4 xl:mr-16"
                 />
+                </Link>
                 {links.map((link) => {
                     const isActive =
                         link.name === "Tutorials" ? isTutorialsActive : pathname === link.href;
