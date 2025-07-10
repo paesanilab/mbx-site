@@ -57,7 +57,9 @@ export default function FAQPage() {
 
                                 {isOpen && (
                                     <div className="px-6 py-4 text-sm text-white bg-[#111840] rounded-b-[10px]">
-                                        <p>{f.answer}</p>
+                                        <p className="whitespace-pre-wrap">
+                                            {f.answer}
+                                        </p>
                                     </div>
                                 )}
                             </div>
