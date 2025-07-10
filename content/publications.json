@@ -10,7 +10,7 @@
             "img_src": "pub202.png"
         },
         {
-            "title": "183. MBX: A many-body energy and force calculator for data-driven many-body simulations.",
+            "title": "MBX: A many-body energy and force calculator for data-driven many-body simulations.",
             "authors": "M. Riera, C. Knight, E.F. Bull-Vulpe, X. Zhu, H. Agnew, D.G.A. Smith, A.C. Simmonett, F. Paesani",
             "date": "February 14, 2025",
             "citation": "J. Chem. Phys. 159, 054802 (2023).",
