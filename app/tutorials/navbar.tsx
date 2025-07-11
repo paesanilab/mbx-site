@@ -4,14 +4,25 @@ import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const links = [
-    { name: "Compilation and Installation", href: "/tutorials/compilation" },
-    { name: "Testing", href: "/tutorials/testing" },
-    { name: "JSON File", href: "/tutorials/jsonfile" },
-    { name: "Main Executables", href: "/tutorials/executables" },
-    { name: "Interfaces", href: "/tutorials/interfaces" },
-    { name: "Coverage", href: "/tutorials/coverage" },
+import content_data from "@/content/tutorials.json";
+
+type Tutorial = {
+    heading: string;
+    markdown_text: string;
+    path?: string;
+}
+
+let links = [
+    { name: "Introduction", href: "/tutorials/" },
 ];
+
+const data: { tutorials: Tutorial[] } = content_data;
+
+for (const key of data.tutorials) {
+    const path = key.path ?? key.heading.toLowerCase().replace(/\s+/g, '-');
+    links.push({ name: key.heading, href: `/tutorials/${path}` });
+}
+    
 
 export function TutorialsSideBar() {
     const pathname = usePathname();

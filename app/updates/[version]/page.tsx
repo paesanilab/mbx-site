@@ -15,7 +15,7 @@ type Update = {
 }
 
 export function generateStaticParams() {
-    return (content as { updates: Update[] }).updates
+    return content.updates
 }
 
 export default async function UpdatePage({ params }: { params: Promise<{ version: string }> }) {
