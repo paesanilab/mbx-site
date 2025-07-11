@@ -13,10 +13,10 @@ export default function Publications() {
                     <div>
                         <h3 className="font-bold text-mb mb-2">{item.title}</h3>
                         <div>
-                            <p className="mb-1 text-xs">{item.authors}, <i>{item.citation}</i></p>
-                            <p className="mb-1 text-blue-500 underline">
-                                {item.link}
+                            <p className="mb-1 text-xs">
+                                {item.authors}, <i>{item.citation}</i>
                             </p>
+                            <p className="mb-1 text-blue-500 underline">{item.link}</p>
                         </div>
                     </div>
                     <div className="text-xs text-[0.625rem]">

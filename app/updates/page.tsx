@@ -26,7 +26,6 @@ export default function UpdatesIndex() {
                                 className="text-blue-400 hover:underline"
                             >
                                 MBX v{u.version} [{u.date}]
-
                             </Link>
                         </li>
                     ))}

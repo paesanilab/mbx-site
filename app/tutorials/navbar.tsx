@@ -10,19 +10,16 @@ type Tutorial = {
     heading: string;
     markdown_text: string;
     path?: string;
-}
+};
 
-let links = [
-    { name: "Introduction", href: "/tutorials/" },
-];
+const links = [{ name: "Introduction", href: "/tutorials/" }];
 
 const data: { tutorials: Tutorial[] } = content_data;
 
 for (const key of data.tutorials) {
-    const path = key.path ?? key.heading.toLowerCase().replace(/\s+/g, '-');
+    const path = key.path ?? key.heading.toLowerCase().replace(/\s+/g, "-");
     links.push({ name: key.heading, href: `/tutorials/${path}` });
 }
-    
 
 export function TutorialsSideBar() {
     const pathname = usePathname();

@@ -10,21 +10,19 @@ type Update = {
     type?: string;
     patch_notes?: string;
     download_link?: string;
-}
+};
 
 export default function Download() {
     const content_data: Update[] = content.updates;
 
     const data: Update[] = [];
-    for (const content_item of content_data){
-        const item = {...content_item}
-        item.type ??= "Source ZIP"
-        item.patch_notes ??= `https://github.com/paesanilab/MBX/releases/tag/v${item.version}`
-        item.download_link ??= `https://github.com/paesanilab/MBX/archive/refs/tags/v${item.version}.zip`
-        data.push(item)
+    for (const content_item of content_data) {
+        const item = { ...content_item };
+        item.type ??= "Source ZIP";
+        item.patch_notes ??= `https://github.com/paesanilab/MBX/releases/tag/v${item.version}`;
+        item.download_link ??= `https://github.com/paesanilab/MBX/archive/refs/tags/v${item.version}.zip`;
+        data.push(item);
     }
-
-
 
     return (
         <div className="bg-[#030625] text-white min-h-screen h-full rounded-[40px] m-[20px] md:m-[70px]">

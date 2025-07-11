@@ -1,7 +1,7 @@
-import nextConfig from "./next.config"
+import nextConfig from "./next.config";
 
 function imageLoader({ src }) {
     return src;
-  }
-  
-  module.exports = imageLoader;
+}
+
+module.exports = imageLoader;

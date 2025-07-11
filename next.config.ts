@@ -1,12 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-    output: 'export',
+    output: "export",
     images: {
         unoptimized: true,
         loader: "custom",
-        loaderFile: "./image_loader.js"
-    }
+        loaderFile: "./image_loader.js",
+    },
 };
 
 export default nextConfig;

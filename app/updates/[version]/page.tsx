@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import content from "@/content/updates.json";
 // import { FaGithub } from "react-icons/fa6";
 
-
 type Update = {
     version: string;
     date: string;
@@ -12,10 +11,10 @@ type Update = {
     type?: string;
     patch_notes?: string;
     download_link?: string;
-}
+};
 
 export function generateStaticParams() {
-    return content.updates
+    return content.updates;
 }
 
 export default async function UpdatePage({ params }: { params: Promise<{ version: string }> }) {
@@ -23,17 +22,15 @@ export default async function UpdatePage({ params }: { params: Promise<{ version
 
     const content_data: Update[] = content.updates;
 
-
     const data: Update[] = [];
     for (const content_item of content_data) {
-        const item = { ...content_item }
-        item.patch_notes ??= `https://github.com/paesanilab/MBX/releases/tag/v${item.version}`
-        item.download_link ??= `https://github.com/paesanilab/MBX/archive/refs/tags/v${item.version}.zip`
+        const item = { ...content_item };
+        item.patch_notes ??= `https://github.com/paesanilab/MBX/releases/tag/v${item.version}`;
+        item.download_link ??= `https://github.com/paesanilab/MBX/archive/refs/tags/v${item.version}.zip`;
         item.releaseNotes ??= [];
         item.changelog ??= [];
-        data.push(item)
+        data.push(item);
     }
-
 
     const update = data.find((u) => u.version === version);
     if (!update) {
