@@ -13,18 +13,25 @@ const links = [
     { name: "About Us", href: "/about" },
     { name: "Updates", href: "/updates" },
     { name: "Publications", href: "/publications" },
-    { name: "Tutorials", href: "/tutorials/compilation" },
+    { name: "Tutorials", href: "/tutorials" },
     { name: "FAQ", href: "/faq" },
 ];
 
-const tutorialsLinks = [
-    { name: "Compilation and Installation", href: "/tutorials/compilation" },
-    { name: "Testing", href: "/tutorials/testing" },
-    { name: "JSON File", href: "/tutorials/jsonfile" },
-    { name: "Main Executables", href: "/tutorials/executables" },
-    { name: "Interfaces", href: "/tutorials/interfaces" },
-    { name: "Coverage", href: "/tutorials/coverage" },
-];
+
+// Generate the tutorials links from the tutorial content data
+type Tutorial = {
+    heading: string;
+    markdown_text: string;
+    path?: string;
+};
+import content_data from "@/content/tutorials.json";
+const tutorialsLinks = [{ name: "Introduction", href: "/tutorials/" }];
+const data: { tutorials: Tutorial[] } = content_data;
+for (const key of data.tutorials) {
+    const path = key.path ?? key.heading.toLowerCase().replace(/\s+/g, "-");
+    tutorialsLinks.push({ name: key.heading, href: `/tutorials/${path}` });
+}
+
 
 export function NavBar() {
     const pathname = usePathname();
