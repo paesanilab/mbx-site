@@ -48,6 +48,10 @@ body {
         #6184da;
 }
 
+p {
+    white-space: pre-wrap;
+}
+
 @layer base {
     :root {
         --background: 0 0% 100%;

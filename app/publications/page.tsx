@@ -8,7 +8,7 @@ export default function Publications() {
     function Item({ index }: { index: number }) {
         const item = publications[index];
         return (
-            <a href={item.link}>
+            <a href={item.link} className="flex">
                 <div className="bg-white text-black rounded-[40px] p-4 mb-6 hover:ring-4 ring-blue-500 duration-100">
 
                     <div>

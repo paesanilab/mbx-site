@@ -15,7 +15,7 @@ export default function Home() {
                 <div className="text-white">
                     <h3 className="font-bold text-xl m-8">{homeData.info_title}</h3>
                     <div className="text-sm m-8">
-                        <p className="mb-3 whitespace-pre-wrap">{homeData.info}</p>
+                        <p className="mb-3">{homeData.info}</p>
                     </div>
                 </div>
             </div>
