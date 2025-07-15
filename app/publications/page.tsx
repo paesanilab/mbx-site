@@ -20,7 +20,7 @@ export default function Publications() {
                             <p className="mb-1 text-blue-500 underline">{item.link}</p>
                         </div>
                     </div>
-                    <div className="text-xs text-[0.625rem]">
+                    <div className="text-xs">
                         {item.img_src !== "" && (
                             <div className=" float-right ml-4 h-[200px] max-w-[400px] w-full relative">
                                 <Image
