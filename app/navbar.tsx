@@ -46,7 +46,7 @@ export function NavBar() {
                         width={93}
                         height={41}
                         alt="MBX logo"
-                        className="mr-0 lg:mr-4 xl:mr-16"
+                        className="mr-0 lg:mr-4 xl:mr-16 p-1"
                     />
                 </Link>
                 {links.map((link) => {
@@ -84,7 +84,7 @@ export function MobileNavBar() {
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger className="bg-[#111840] flex items-center justify-between p-2 m-4 rounded-lg">
                 <AlignJustify size={36} className="text-white" />
-                <Image src="/mbx-logo.png" alt="MBX logo" width={80} height={35} />
+                <Image src="/mbx-logo.png" alt="MBX logo" width={80} height={35} className="p-1" />
             </SheetTrigger>
 
             <SheetContent side="left" className="bg-[#111840] overflow-y-auto">
