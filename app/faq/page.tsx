@@ -4,6 +4,9 @@ import clsx from "clsx";
 import React, { useState } from "react";
 
 import data from "@/content/faq.json";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import "../github-markdown.css";
 
 export default function FAQPage() {
     const faqs = data.items;
@@ -56,8 +59,8 @@ export default function FAQPage() {
                                 </button>
 
                                 {isOpen && (
-                                    <div className="px-6 py-4 text-sm text-white bg-[#111840] rounded-b-[10px]">
-                                        <p className="whitespace-pre-wrap">{f.answer}</p>
+                                    <div className="markdown-body px-6 py-4 text-sm text-white bg-[#111840] rounded-b-[10px]">
+                                        <Markdown remarkPlugins={[remarkGfm]}>{f.answer}</Markdown>
                                     </div>
                                 )}
                             </div>
