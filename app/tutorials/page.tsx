@@ -1,7 +1,7 @@
 import React from "react";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import "./github-markdown.css";
+import "../github-markdown.css";
 
 import data from "@/content/tutorials.json";
 
