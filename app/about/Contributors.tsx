@@ -46,7 +46,7 @@ export default function Contributors() {
                         className="relative bg-white rounded-lg flex flex-col justify-start overflow-hidden w-[200px] shadow-gray-100 hover:shadow-lg transition-shadow duration-300"
                     >
                         {/* Only render the photo if person.image is non‑empty */}
-                        {person.image && (
+                        {person.image && activeTab === "current" && (
                             <div className="w-full h-[200px] relative">
                                 <Image
                                     src={"/people/" + person.image}
