@@ -12,7 +12,7 @@ type Tutorial = {
     path?: string;
 };
 
-const links = [{ name: "Introduction", href: "/tutorials/" }];
+const links = [{ name: "Introduction", href: "/tutorials" }];
 
 const data: { tutorials: Tutorial[] } = content_data;
 

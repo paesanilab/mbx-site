@@ -15,6 +15,7 @@ const links = [
     { name: "Publications", href: "/publications" },
     { name: "Tutorials", href: "/tutorials" },
     { name: "FAQ", href: "/faq" },
+    { name: "YouTube", href: "https://www.youtube.com/@paesanilab8913/videos", external: true },
 ];
 
 
@@ -56,6 +57,7 @@ export function NavBar() {
                         <Link
                             key={link.name}
                             href={link.href}
+                            target={link.external ? "_blank" : undefined}
                             className={clsx("hover:text-[#5483BF]", {
                                 "text-[#5483BF]": isActive,
                             })}

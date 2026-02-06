@@ -3,7 +3,7 @@ import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import supersub from "remark-supersub";
-import "../github-markdown.css";
+import "../../github-markdown.css";
 
 import { notFound } from "next/navigation";
 import content from "@/content/tutorials.json";

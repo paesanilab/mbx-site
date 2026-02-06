@@ -1,6 +1,9 @@
 import Molecular from "@/components/molecular";
 
 import data from "@/content/home.json";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import "./github-markdown.css";
 
 export default function Home() {
     const homeData = data;
@@ -11,12 +14,9 @@ export default function Home() {
                 {homeData.subheading}
             </h2>
 
-            <div className="max-w-7xl w-full bg-[#111840] shadow-md rounded-[2rem] p-0 md:p-6">
-                <div className="text-white">
-                    <h3 className="font-bold text-xl m-8">{homeData.info_title}</h3>
-                    <div className="text-sm m-8">
-                        <p className="mb-3">{homeData.info}</p>
-                    </div>
+            <div className="max-w-7xl w-full">
+                <div className="markdown-body  flex flex-col p-[20px] rounded-[40px] md:p-[80px] md:text-base shadow-md">
+                    <Markdown remarkPlugins={[remarkGfm]}>{homeData.info}</Markdown>
                 </div>
             </div>
         </div>
