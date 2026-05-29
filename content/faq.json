@@ -1,12 +1,20 @@
 {
     "items": [
         {
-            "question": "What softwares can MBX interface with?",
-            "answer": "MBX can currently be interfaced with both the LAMMPS and i-PI software packages."
+            "question": "What software can MBX interface with?",
+            "answer": "MBX can currently be interfaced with both the [LAMMPS](https://docs.lammps.org/pair_mbx.html) and [i-PI](http://ipi-code.org) software packages."
         },
         {
             "question": "MBX seems very slow, is something wrong?",
             "answer": "To get the best performance, please check all of these things:\n1) Do not disable compiler optimizations. When you run `configure` don't pass `--disable-optimization`.\n2) For most systems, run on a single MPI rank, with up to 32 OpenMP threads. (which you can set with `OMP_NUM_THREADS=32`)\n4) Don't oversubscribe your cores, or use hardware-level parallelism features. If your processor has 16 physical cores, don't use more OpenMP threads than that.\n5) Bind your threads to nearby cores. It can be helpful to set `OMP_PROC_BIND=\"close\"` and `OMP_PLACES=\"cores\"`.\n6) If your research allows, run multiple shorter simulations rather than one long one. For most equilibrium-state studies, such as RDFs, spectroscopy, etc. many short trajectories work just as well as one long trajectory. Because MBX does not scale well past 32 OpenMP threads for normal box sizes, much greater throughput will be achieved by running multiple simulations with fewer cores rather than one simulation with many cores."
+        },
+        {
+            "question":"What models do you have availabile in MBX?",
+            "answer":"MBX currently supports the MB-pol potential for water, and the MB-nrg potentials such as for alkali-metal ions, halide ions, CO_2, and CH_4. A full list with links to the papers describing the models can be found here: https://mbxsimulations.com/tutorials/pefs-implemented-and-how-to-cite."
+        },
+        {
+            "question": "How can I learn more about the MBX+LAMMPS interface?",
+            "answer": "The MBX+LAMMPS documentation can be found here: https://docs.lammps.org/pair_mbx.html. We also have some video tutorials on our YouTube channel.\n - [Tutorial 3: Compiling MBX+LAMMPS](https://www.youtube.com/watch?v=BBlq2RWyl4Q&list=PLPUCe-CWqiYbRcN3EzW9J8gQecZvb63iJ&index=3&pp=iAQB)\n - [Tutorial 4: Using MBX+LAMMPS examples](https://www.youtube.com/watch?v=CaggOelutEc&list=PLPUCe-CWqiYbRcN3EzW9J8gQecZvb63iJ&index=5&pp=iAQB)"
         },
         {
             "question": "What if my question is not answered here?",
