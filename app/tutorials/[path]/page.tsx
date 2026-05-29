@@ -1,11 +1,11 @@
 import React from "react";
 import Markdown from "react-markdown";
+import { useParams } from "react-router-dom";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import supersub from "remark-supersub";
 import "../../github-markdown.css";
 
-import { notFound } from "next/navigation";
 import content from "@/content/tutorials.json";
 
 type Tutorial = {
@@ -14,17 +14,8 @@ type Tutorial = {
     path?: string;
 };
 
-export function generateStaticParams() {
-    return content.tutorials.map((tutorial: Tutorial) => ({
-        title: tutorial.heading,
-        markdown_text: tutorial.markdown_text,
-        path: tutorial.path ?? tutorial.heading.toLowerCase().replace(/ /g, "-"),
-    }));
-}
-
-export default async function SubTutorial({ params }: { params: Promise<{ path: string }> }) {
-    const { path } = await params;
-
+export default function SubTutorial() {
+    const { path } = useParams<{ path: string }>();
     const content_data: Tutorial[] = content.tutorials; // Importing again from the JSON file
 
     const data: Tutorial[] = [];
@@ -36,7 +27,13 @@ export default async function SubTutorial({ params }: { params: Promise<{ path: 
 
     const update = data.find((u) => u.path === path);
     if (!update) {
-        return notFound();
+        return (
+            <div className="bg-[#030625] text-white min-h-screen h-full rounded-[40px] m-[20px] md:my-[70px] md:ml-[32px] md:mr-[45px]">
+                <div className="flex flex-col p-[20px] md:p-[80px]">
+                    <h2 className="font-bold text-3xl">Tutorial not found</h2>
+                </div>
+            </div>
+        );
     }
 
     return (

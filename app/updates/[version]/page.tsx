@@ -1,5 +1,5 @@
 // app/updates/[version]/page.tsx
-import { notFound } from "next/navigation";
+import { useParams } from "react-router-dom";
 import content from "@/content/updates.json";
 // import { FaGithub } from "react-icons/fa6";
 
@@ -13,13 +13,8 @@ type Update = {
     download_link?: string;
 };
 
-export function generateStaticParams() {
-    return content.updates;
-}
-
-export default async function UpdatePage({ params }: { params: Promise<{ version: string }> }) {
-    const { version } = await params;
-
+export default function UpdatePage() {
+    const { version } = useParams<{ version: string }>();
     const content_data: Update[] = content.updates;
 
     const data: Update[] = [];
@@ -34,7 +29,13 @@ export default async function UpdatePage({ params }: { params: Promise<{ version
 
     const update = data.find((u) => u.version === version);
     if (!update) {
-        return notFound();
+        return (
+            <div className="bg-[#030625] text-white min-h-screen h-full rounded-[40px] m-[20px] md:my-[70px] md:ml-[32px] md:mr-[45px]">
+                <div className="flex flex-col p-[20px] md:p-[80px]">
+                    <h2 className="font-bold text-3xl">Update not found</h2>
+                </div>
+            </div>
+        );
     }
 
     return (

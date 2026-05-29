@@ -83,15 +83,15 @@ All page content lives in **`content/`** as various JSON files. Each JSON file c
     - Example path: `public/images/francesco.png`
     - In `content.json`, refer to `/images/francesco.png`.
 
-- The React components use Next.js’ built‐in `<Image>` component (which looks in `public/` automatically).
-    - If `content.about.current[i].image === "test.png"`, the `<Image>` will resolve to `public/test.png`.
+- The React components use a small local image helper, **`components/image.tsx`**, which resolves assets from `public/`.
+    - If `content.about.current[i].image === "test.png"`, the image will resolve to `public/people/test.png` where the current component prefixes `/people/`.
     - Do not include `public` in the JSON path—omit it. Always start with `/...`.
 
 ### 2.2 Downloadable Files
 
 - Save files under **`public/downloads/`**.
     - Example: if you place `MBX_v1.2.zip` in `public/downloads/MBX_v1.2.zip`, then in `content.download.versions` set `"link": "/downloads/MBX_v1.2.zip"`.
-    - Next.js serves everything in `public/` at root, so the download button’s `href="/downloads/MBX_v1.2.zip"` will work out of the box.
+    - Vite serves everything in `public/` at root, so the download button’s `href="/downloads/MBX_v1.2.zip"` will work out of the box.
 
 - In `content.json`:
     ```json
@@ -140,27 +140,19 @@ npm run dev
 ### Enter the following into your browser:
 
 ```bash
-http://localhost:3000
+http://localhost:5173
 ```
 
 ## Code Quality and Linting
 
-This project uses ESLint and Prettier to ensure code quality and consistent formatting.
+This project uses TypeScript and Prettier to keep code quality and formatting consistent.
 
 ### Linting Check
 
-To manually check for linting errors, run:
+To manually check for type errors, run:
 
 ```bash
-npm run lint-check
-```
-
-### Auto-fix Linting Errors
-
-To automatically fix linting errors, run
-
-```bash
-npm run lint-fix
+npm run lint
 ```
 
 ### Prettier Formatting
@@ -187,7 +179,7 @@ npm run test
 
 ## Deployment
 
-This project is [deployed](https://nextjs-boilerplate-nu-six-50.vercel.app/) via Vercel. The demo page can be found at '/demo'.
+This project builds as a Vite single-page app and can be deployed to any static host that serves `dist/`.
 
 Any changes to the 'main' branch will trigger Playwright tests and auto-deployment to Vercel.
 

@@ -13,12 +13,13 @@
 # testing
 /coverage
 
-# next.js
+# framework build caches
 /.next/
 /out/
 
 # production
 /build
+/dist
 
 # misc
 .DS_Store
@@ -37,7 +38,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
 
 # eslint
 .eslintcache
@@ -45,3 +45,11 @@ next-env.d.ts
 playwright-report
 
 prisma/generated
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/

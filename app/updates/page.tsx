@@ -1,6 +1,6 @@
-import Link from "next/link";
 import React from "react";
 import content from "@/content/updates.json";
+import { Link } from "@/lib/navigation";
 
 type Update = {
     id: string;

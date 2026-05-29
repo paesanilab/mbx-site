@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import React, { useState } from "react";
+import Image from "@/components/image";
 import data from "@/content/about.json";
 
 type Person = { name: string; role: string; image: string };

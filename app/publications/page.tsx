@@ -1,5 +1,5 @@
-import Image from "next/image";
 import React from "react";
+import Image from "@/components/image";
 import data from "@/content/publications.json";
 
 export default function Publications() {

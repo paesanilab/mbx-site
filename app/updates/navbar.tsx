@@ -1,9 +1,8 @@
 "use client";
 
 import clsx from "clsx";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import content from "@/content/updates.json";
+import { Link, usePathname } from "@/lib/navigation";
 
 type Update = {
     version: string;

@@ -1,44 +1,46 @@
 {
-    "name": "mbx_website",
-    "version": "1.3.5",
-    "private": true,
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "serve": "npx serve@latest out",
-        "lint": "next lint",
-        "test:e2e": "playwright test",
-        "check-git-hooks": "node .secret-scan/secret-scan.js -- --check-git-hooks",
-        "format": "prettier --write .",
-        "test": "playwright test"
-    },
-    "dependencies": {
-        "@playwright/test": "^1.58.0",
-        "@radix-ui/react-dialog": "^1.1.14",
-        "@radix-ui/react-icons": "^1.3.2",
-        "@radix-ui/react-slot": "^1.2.3",
-        "@tailwindcss/postcss": "^4.1.11",
-        "class-variance-authority": "^0.7.1",
-        "clsx": "^2.1.1",
-        "lucide-react": "^0.525.0",
-        "next": "^16.1.5",
-        "playwright": "^1.58.0",
-        "react": "^19.1.0",
-        "react-dom": "^19.1.0",
-        "react-markdown": "^10.1.0",
-        "remark-gfm": "^4.0.1",
-        "remark-math": "^6.0.0",
-        "remark-supersub": "^1.0.0",
-        "tailwind-merge": "^3.3.1"
-    },
-    "devDependencies": {
-        "@types/node": "^24.0.12",
-        "@types/react": "^19.1.8",
-        "@types/react-dom": "^19.1.6",
-        "postcss": "^8.5.6",
-        "prettier": "^3.6.2",
-        "tailwindcss": "^4.1.11",
-        "tailwindcss-animate": "^1.0.7",
-        "typescript": "^5.8.3"
-    }
+  "name": "mbx_website",
+  "version": "1.3.5",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "serve": "vite preview",
+    "lint": "tsc --noEmit",
+    "test:e2e": "playwright test",
+    "check-git-hooks": "node .secret-scan/secret-scan.js -- --check-git-hooks",
+    "format": "prettier --write .",
+    "test": "playwright test"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.14",
+    "@radix-ui/react-icons": "^1.3.2",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@tailwindcss/postcss": "^4.1.11",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.525.0",
+    "playwright": "^1.58.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.6.3",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
+    "remark-supersub": "^1.0.0",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^24.0.12",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^4.1.11",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.4"
+  }
 }

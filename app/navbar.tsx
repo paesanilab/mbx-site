@@ -2,11 +2,10 @@
 
 import clsx from "clsx";
 import { AlignJustify, ChevronDown } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
+import Image from "@/components/image";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Link, usePathname } from "@/lib/navigation";
 
 const links = [
     { name: "Home", href: "/" },
