@@ -1,192 +1,107 @@
 # Paesani MBX Site
 
-This README explains how to use the `content.json` file to edit the site’s pages, where to place images and downloadable files, and how to update content without modifying component code directly.
+This repository contains the MBX website, built as a Vite + React single-page app. Most page content lives in JSON files under `content/`, so routine site updates can usually be made without editing React components.
 
----
+## Content Files
 
-## 1. Overview of `content/content.json`
+All editable page data lives in `content/`:
 
-All page content lives in **`content/`** as various JSON files. Each JSON file corresponds to a section of the site:
+- `content/home.json`
+  - `subheading`: home page subtitle.
+  - `info_title`: heading for the home page information section.
+  - `info`: Markdown text. Use `\n\n` for paragraph breaks.
 
-- **`home`**  
-  Contains:
-    - `subheading` (string)
-    - `info_title` (string)
-    - `info` (string with `\n\n` for line breaks)
+- `content/publications.json`
+  - `items`: publication objects with `title`, `authors`, `date`, `citation`, `link`, `description`, and `img_src`.
+  - Publication images are stored in `public/publications/`.
+  - Set `img_src` to a filename such as `pub202.png`; set it to `""` to show no image.
 
-- **`publications`**
-    - `items`: an array of publication objects
-        ```json
-        {
-            "title": "...",
-            "author": "...",
-            "date": "...",
-            "citation": "...",
-            "link": "...",
-            "description": "...",
-            "img_src": "/images/your_image.png"
-        }
-        ```
-    - If `img_src` is a non‐empty string, the Publications page will render an `<Image>` from `/public/images/`. If empty, no image is shown.
+- `content/faq.json`
+  - `items`: FAQ objects with `question` and `answer`.
+  - Answers are rendered as Markdown.
 
-- **`faq`**
-    - `items`: an array of `{ question: string, answer: string }`. Line breaks in `answer` can be represented by `\n\n`.
+- `content/about.json`
+  - `current`: current contributors.
+  - `former`: former contributors.
+  - Contributor images are stored in `public/people/`.
+  - Set `image` to a filename such as `fpaesani.png`; omit it or set it to `""` to show no photo.
 
-- **`about`**
-    - `current`: array of people currently in the group
-    - `former`: array of former people  
-      Each person object:
+- `content/updates.json`
+  - `updates`: release objects with `version`, `date`, `releaseNotes`, and `changelog`.
+  - The updates pages, updates sidebar, and download page all read from this file.
+  - The download page defaults release notes and source ZIP links to the matching MBX GitHub release tag.
 
-    ```json
-    {
-        "name": "Full Name",
-        "role": "Title/Role",
-        "image": "/filename.png"
-    }
-    ```
+- `content/tutorials.json`
+  - `introduction`: main tutorials page content with `heading` and `markdown_text`.
+  - `tutorials`: tutorial page objects with `heading`, `markdown_text`, and optional `path`.
+  - If `path` is omitted, the route is generated from the lower-case heading with spaces replaced by hyphens.
 
-    - If `"image"` is empty (`""`), that card will render without a photo.
+## Static Assets
 
-- **`updates`**
-    - Array of update objects
-        ```json
-        {
-            "version": "x.x.0",
-            "date": "2025-01-30",
-            "releaseNotes": [
-                { "type": "Security update", "description": "Lorem ipsum…" },
-                { "type": "Patch", "description": "Details…" }
-            ],
-            "changelog": ["Feature A: …", "Feature B: …"]
-        }
-        ```
-    - The sidebar and index page automatically read from this array. To add, remove, or reorder update links, edit **`content.updates`**.
+Vite serves files in `public/` from the site root.
 
-- **`tutorials`**
-    - Keys: `introduction`, `tutorials`
-    - `introduction`: single tutorial object
-    - `tutorials`: array of tutorial objects
-        ```json
-        {
-            "heading": "Tutorial Title",
-            "markdown_text": "Markdown content for the tutorial"
-        }
-        ```
+- Site assets such as the logo live directly under `public/`.
+- Contributor photos live under `public/people/`.
+- Publication figures live under `public/publications/`.
+- Do not include `public/` in JSON image paths.
 
----
+Examples:
 
-## 2. Where to Place Static Assets
+```json
+{
+    "image": "fpaesani.png"
+}
+```
 
-### 2.1 Images
-
-- Save all image files under **`public/`**.
-    - Example path: `public/images/francesco.png`
-    - In `content.json`, refer to `/images/francesco.png`.
-
-- The React components use a small local image helper, **`components/image.tsx`**, which resolves assets from `public/`.
-    - If `content.about.current[i].image === "test.png"`, the image will resolve to `public/people/test.png` where the current component prefixes `/people/`.
-    - Do not include `public` in the JSON path—omit it. Always start with `/...`.
-
-### 2.2 Downloadable Files
-
-- Save files under **`public/downloads/`**.
-    - Example: if you place `MBX_v1.2.zip` in `public/downloads/MBX_v1.2.zip`, then in `content.download.versions` set `"link": "/downloads/MBX_v1.2.zip"`.
-    - Vite serves everything in `public/` at root, so the download button’s `href="/downloads/MBX_v1.2.zip"` will work out of the box.
-
-- In `content.json`:
-    ```json
-    {
-        "version": "1.2",
-        "date": "20 August 2024",
-        "size": "15.4MB",
-        "type": "GitHub",
-        "link": "/downloads/MBX_v1.2.zip"
-    }
-    ```
-- The “Download” `<button>` in **`app/download/page.tsx`** should be replaced (if needed) with:
-    ```tsx
-    <a href={item.link} download>
-        <button>Download</button>
-    </a>
-    ```
-    to trigger a download rather than navigation.
-
----
-
-## 3. Editing Content
-
-1. Open **`content/`** in your editor.
-2. Locate the JSON file for the page you want to modify (e.g. `"updates"`, `"about"`, `"publications"`, etc.).
-3. For each array item or sub‐object, update titles, dates, descriptions, or file paths.
-    - Always maintain correct JSON syntax (commas, quotes, brackets).
-4. Save. The dev server (if running with `npm run dev`) will hot‐reload and reflect your changes immediately.
-
----
+```json
+{
+    "img_src": "pub202.png"
+}
+```
 
 ## Getting Started
 
-### Install the dependencies from npm:
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-### Run the development server:
+Run the development server:
 
 ```bash
 npm run dev
 ```
 
-### Enter the following into your browser:
+Open the local site:
 
-```bash
+```text
 http://localhost:5173
 ```
 
-## Code Quality and Linting
+## Scripts
 
-This project uses TypeScript and Prettier to keep code quality and formatting consistent.
+- `npm run dev`: start the Vite development server.
+- `npm run build`: type-check and build the production site into `dist/`.
+- `npm run serve`: preview the production build locally.
+- `npm run lint`: run the TypeScript type check.
+- `npm run format`: format the repository with Prettier.
+- `npm run test`: run Playwright tests.
+- `npm run test:e2e`: run Playwright tests.
+- `npm run check-git-hooks`: verify the secret-scan git hooks.
 
-### Linting Check
+## Code Quality
 
-To manually check for type errors, run:
+The build and lint scripts both run `tsc --noEmit`. Prettier is available through `npm run format`.
 
-```bash
-npm run lint
-```
-
-### Prettier Formatting
-
-To format your code with Prettier, run
-
-```bash
-npx prettier --write .
-```
-
-## Committing and Pushing
-
-On commit, linting checks are automatically run to ensure code quality. Fix any errors manually or using the above commands, then stage those changes to proceed.
-
-On push, a secret scan is triggered to ensure no sensitive data is accidentally pushed.
-
-## Running Tests
-
-To run Playwright tests, run
-
-```bash
-npm run test
-```
+Playwright tests live under `e2e/` and `tests/e2e/`. CI installs Playwright browsers before running the test suite.
 
 ## Deployment
 
-This project builds as a Vite single-page app and can be deployed to any static host that serves `dist/`.
+The site builds as a Vite single-page app and can be deployed to any static host that serves `dist/`.
 
-Any changes to the 'main' branch will trigger Playwright tests and auto-deployment to Vercel.
+The GitHub Actions workflows currently:
 
-## Contributing Guidelines
-
-Branching + PR Guidelines (Work in Progress)
-
-## Documentation
-
-Link to Documentation (Work in Progress)
+- run type checks, build, and Playwright tests on pushes and pull requests to `main` or `master`;
+- deploy the Vite build to GitHub Pages on pushes to `main`;
+- copy `dist/index.html` to `dist/404.html` so browser-routed pages work on GitHub Pages.
