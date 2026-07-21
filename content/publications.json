@@ -1,6 +1,15 @@
 {
     "items": [
         {
+            "title": "MBX v1.4: Memory-Aware SIMD-Enabled Permutationally Invariant Polynomial Code-Generation Procedure: Acceleration of the MB-pol Potential Energy Function as an Example.",
+            "authors": "S. Iyer, E.F. Bull-Vulpe, C. Knight, F. Paesani",
+            "date": "July 2, 2026",
+            "citation": "ChemRxiv (2026).",
+            "link": "https://doi.org/10.26434/chemrxiv.15005580/v1",
+            "description": "Permutationally invariant polynomial potential energy functions can deliver highly accurate many-body simulations, but molecular dynamics requires repeated evaluation of these polynomials and their gradients. This work introduces a memory-aware code-generation procedure that optimizes polynomial routines by extracting duplicate subexpressions and reordering statements to reduce the working set. Applied to the MB-pol potential energy function, the approach enables efficient SIMD vectorization and substantially accelerates polynomial evaluation with modern CPU instruction sets.",
+            "img_src": "pub229.jpg"
+        },
+        {
             "title": "MBX v1.2: Accelerating data-driven many-body molecular dynamics simulations.",
             "authors": "S. Gupta, E.F. Bull-Vulpe, H. Agnew, S. Iyer, X. Zhu, R. Zhou, C. Knight, F. Paesani",
             "date": "February 14, 2025",
