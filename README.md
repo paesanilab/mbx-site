@@ -2,6 +2,10 @@
 
 This repository contains the MBX website, built as a Vite + React single-page app. Most page content lives in JSON files under `content/`, so routine site updates can usually be made without editing React components.
 
+## Funding
+
+MBX development is supported by the U.S. National Science Foundation through [Award No. 2311260, “Frameworks: Data-Driven Software Infrastructure for Next-Generation Molecular Simulations.”](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2311260)
+
 ## Content Files
 
 All editable page data lives in `content/`:
@@ -13,6 +17,8 @@ All editable page data lives in `content/`:
 
 - `content/publications.json`
   - `items`: publication objects with `title`, `authors`, `date`, `citation`, `link`, `description`, and `img_src`.
+  - `applications`: MBX applications and derivative-work publication objects. These may also include a `relationship` label.
+  - `applications_intro`: introductory copy for the applications and derivative work section.
   - Publication images are stored in `public/publications/`.
   - Set `img_src` to a filename such as `pub202.png`; set it to `""` to show no image.
 
