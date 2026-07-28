@@ -27,5 +27,58 @@
             "description": "Many-Body eXpansion (MBX) is a C++ library that implements many-body potential energy functions (PEFs) within the “many-body energy” (MB-nrg) formalism. MB-nrg PEFs integrate an underlying polarizable model with explicit machine-learned representations of many-body interactions to achieve chemical accuracy from the gas to the condensed phases. MBX can be employed either as a stand-alone package or as an energy/force engine that can be integrated with generic software for molecular dynamics and Monte Carlo simulations. MBX is parallelized internally using Open Multi-Processing and can utilize Message Passing Interface when available in interfaced molecular simulation software. MBX enables classical and quantum molecular simulations with MB-nrg PEFs, as well as hybrid simulations that combine conventional force fields and MB-nrg PEFs, for diverse systems ranging from small gas-phase clusters to aqueous solutions and molecular fluids to biomolecular systems and metal-organic frameworks.",
             "img_src": "pub183.jpeg"
         }
+    ],
+    "applications_intro": "MBX and the many-body expansion models behind it support a growing range of scientific applications and related methodological developments. The publications below highlight recent MBX-enabled research as well as derivative work that builds on the same data-driven many-body framework.",
+    "applications": [
+        {
+            "title": "Hydration Free Energies of Alkali Metal and Halide Ions from Data-Driven Many-Body Potentials.",
+            "authors": "S. Saha, F. Paesani",
+            "date": "April 29, 2026",
+            "citation": "J. Chem. Theory Comput. 22, 4688–4698 (2026).",
+            "link": "https://doi.org/10.1021/acs.jctc.6c00391",
+            "description": "This work uses MB-nrg ion potentials in MB-pol water to calculate single-ion hydration free energies. A soft-core Coulomb scaling implemented in MBX enables robust alchemical transformations and a detailed separation of electrostatic, polarization, explicit many-body, and nuclear quantum contributions.",
+            "img_src": "",
+            "relationship": "MBX application"
+        },
+        {
+            "title": "From Potentials to Properties: Data-Driven Many-Body Simulations of Water and Aqueous Systems.",
+            "authors": "F. Paesani, R. Rashmi, H. Agnew, X. Zhu, E.F. Bull-Vulpe, R. Zhou",
+            "date": "April 16, 2026",
+            "citation": "Annu. Rev. Phys. Chem. 77, 321–343 (2026).",
+            "link": "https://doi.org/10.1146/annurev-physchem-082423-115133",
+            "description": "This review surveys how MB-pol and MB-nrg data-driven many-body potential energy functions connect high-level electronic structure theory with predictive molecular simulations of water and aqueous systems across phases, interfaces, and chemical environments.",
+            "img_src": "",
+            "relationship": "Review"
+        },
+        {
+            "title": "Density-Functionalized QM/MM Delivers Chemical Accuracy For Solvated Systems.",
+            "authors": "X. Chen, J.A. Martinez B, X. Shao, M. Riera Riambau, O. Andreussi, F. Paesani, M. Pavanello",
+            "date": "October 28, 2025",
+            "citation": "J. Chem. Theory Comput. 21, 10340–10352 (2025).",
+            "link": "https://doi.org/10.1021/acs.jctc.5c01440",
+            "description": "A density-functionalized QM/MM framework assigns an electron density to both the quantum and molecular-mechanics subsystems and treats their interaction with orbital-free density functionals. Tests spanning water clusters, bulk water, solvated molecules and ions, and a wet MoS₂ monolayer demonstrate rapid convergence to chemical accuracy.",
+            "img_src": "",
+            "relationship": "Derivative work"
+        },
+        {
+            "title": "Permutationally Invariant Fourier Series for Accurate and Robust Data-Driven Many-Body Potentials.",
+            "authors": "X. Zhu, F. Paesani",
+            "date": "July 22, 2025",
+            "citation": "J. Chem. Theory Comput. 21, 6950–6963 (2025).",
+            "link": "https://doi.org/10.1021/acs.jctc.5c00407",
+            "description": "Permutationally invariant Fourier series provide a robust representation of many-body potential energy functions that avoids unphysical low-energy holes outside the training domain while retaining high accuracy and computational efficiency.",
+            "img_src": "",
+            "relationship": "Method development"
+        },
+        {
+            "title": "Sub-nanometer Confinement Suppresses Autoionization of Water.",
+            "authors": "S. Dasgupta, S. Saha, F. Paesani",
+            "date": "July 14, 2025",
+            "citation": "J. Am. Chem. Soc. 147, 25167–25173 (2025).",
+            "link": "https://doi.org/10.1021/jacs.5c08273",
+            "description": "Density-corrected density functional theory and machine-learned interatomic potentials reveal that extreme confinement suppresses water autoionization by destabilizing hydroxide at interfaces and disrupting hydrogen-bond rearrangements and proton transport.",
+            "img_src": "",
+            "relationship": "Derivative work"
+        }
     ]
 }

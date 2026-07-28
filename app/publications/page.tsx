@@ -2,16 +2,31 @@ import React from "react";
 import Image from "@/components/image";
 import data from "@/content/publications.json";
 
+type Publication = {
+    title: string;
+    authors: string;
+    date: string;
+    citation: string;
+    link: string;
+    description: string;
+    img_src: string;
+    relationship?: string;
+};
+
 export default function Publications() {
     const publications = data.items;
+    const applications = data.applications;
 
-    function Item({ index }: { index: number }) {
-        const item = publications[index];
+    function Item({ item }: { item: Publication }) {
         return (
-            <a href={item.link} className="flex">
-                <div className="bg-white text-black rounded-[40px] p-4 mb-6 hover:ring-4 ring-blue-500 duration-100">
-
+            <a href={item.link} className="flex" target="_blank" rel="noreferrer">
+                <article className="bg-white text-black rounded-[40px] p-4 mb-6 w-full hover:ring-4 ring-blue-500 duration-100">
                     <div>
+                        {item.relationship && (
+                            <p className="inline-block rounded-full bg-[#e8edff] px-3 py-1 mb-3 text-xs font-semibold text-[#243da5]">
+                                {item.relationship}
+                            </p>
+                        )}
                         <h3 className="font-bold text-mb mb-2">{item.title}</h3>
                         <div>
                             <p className="mb-1 text-xs">
@@ -33,7 +48,7 @@ export default function Publications() {
                         )}
                         {item.description}
                     </div>
-                </div>
+                </article>
             </a>
         );
     }
@@ -44,9 +59,22 @@ export default function Publications() {
                 {/* Page Title */}
                 <h2 className="font-bold text-3xl pb-[20px] md:pb-[50px]">Key MBX Publications</h2>
 
-                {publications.map((_, i) => (
-                    <Item key={i} index={i} />
+                {publications.map((publication) => (
+                    <Item key={publication.link} item={publication} />
                 ))}
+
+                <section className="pt-[20px] md:pt-[40px]">
+                    <h2 className="font-bold text-3xl pb-[20px]">
+                        Applications and Derivative Work
+                    </h2>
+                    <p className="max-w-4xl pb-[30px] text-sm md:text-base text-slate-200">
+                        {data.applications_intro}
+                    </p>
+
+                    {applications.map((publication) => (
+                        <Item key={publication.link} item={publication} />
+                    ))}
+                </section>
             </div>
         </div>
     );

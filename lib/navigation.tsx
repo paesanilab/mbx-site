@@ -1,8 +1,4 @@
-import {
-    Link as RouterLink,
-    type LinkProps as RouterLinkProps,
-    useLocation,
-} from "react-router-dom";
+import { Link as RouterLink, type LinkProps as RouterLinkProps, useLocation } from "react-router";
 import type React from "react";
 
 type LinkProps = Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href"> & {

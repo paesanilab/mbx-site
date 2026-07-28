@@ -1,5 +1,5 @@
 // app/updates/[version]/page.tsx
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 import content from "@/content/updates.json";
 // import { FaGithub } from "react-icons/fa6";
 

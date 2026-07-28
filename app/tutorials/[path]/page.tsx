@@ -1,6 +1,6 @@
 import React from "react";
 import Markdown from "react-markdown";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import supersub from "remark-supersub";
