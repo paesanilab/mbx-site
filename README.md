@@ -67,6 +67,8 @@ Examples:
 
 ## Getting Started
 
+Node.js 24.18.0 (LTS) or newer is required.
+
 Install dependencies:
 
 ```bash
