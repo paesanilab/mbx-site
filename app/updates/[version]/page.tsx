@@ -31,7 +31,7 @@ export default function UpdatePage() {
     if (!update) {
         return (
             <div className="bg-[#030625] text-white min-h-screen h-full rounded-[40px] m-[20px] md:my-[70px] md:ml-[32px] md:mr-[45px]">
-                <div className="flex flex-col p-[20px] md:p-[80px]">
+                <div className="flex min-w-0 flex-col p-[20px] md:p-[80px]">
                     <h2 className="font-bold text-3xl">Update not found</h2>
                 </div>
             </div>
@@ -41,7 +41,7 @@ export default function UpdatePage() {
     return (
         <div className="space-y-8">
             <div className="bg-[#030625] text-white min-h-screen h-full rounded-[40px] m-[20px] md:my-[70px] md:ml-[32px] md:mr-[45px]">
-                <div className="flex flex-col p-[20px] md:p-[80px]">
+                <div className="flex min-w-0 flex-col p-[20px] md:p-[80px]">
                     <h2 className="font-bold text-3xl pb-[30px] md:pb-[50px]  flex justify-between align-center">
                         MBX v{update.version} [{update.date}]
                         <a
@@ -58,7 +58,7 @@ export default function UpdatePage() {
                             <h2 className="text-xl font-bold mb-2">Release Notes</h2>
                             <ul className="space-y-3">
                                 {update.releaseNotes.map((note, i) => (
-                                    <li key={i}>
+                                    <li key={i} className="min-w-0 [overflow-wrap:anywhere]">
                                         <span className="text-[#60A7FF] font-medium">
                                             {note.type}:
                                         </span>{" "}
@@ -74,7 +74,9 @@ export default function UpdatePage() {
                             <h2 className="text-xl font-bold mb-2">Changelog</h2>
                             <ul className="list-disc pl-5 text-[#CCCCCC] space-y-1">
                                 {update.changelog.map((feature, i) => (
-                                    <li key={i}>{feature}</li>
+                                    <li key={i} className="min-w-0 [overflow-wrap:anywhere]">
+                                        {feature}
+                                    </li>
                                 ))}
                             </ul>
                         </div>

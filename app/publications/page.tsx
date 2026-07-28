@@ -19,8 +19,8 @@ export default function Publications() {
 
     function Item({ item }: { item: Publication }) {
         return (
-            <a href={item.link} className="flex" target="_blank" rel="noreferrer">
-                <article className="bg-white text-black rounded-[40px] p-4 mb-6 w-full hover:ring-4 ring-blue-500 duration-100">
+            <a href={item.link} className="flex min-w-0" target="_blank" rel="noreferrer">
+                <article className="bg-white text-black rounded-[40px] p-4 mb-6 min-w-0 w-full hover:ring-4 ring-blue-500 duration-100">
                     <div>
                         {item.relationship && (
                             <p className="inline-block rounded-full bg-[#e8edff] px-3 py-1 mb-3 text-xs font-semibold text-[#243da5]">
@@ -32,7 +32,9 @@ export default function Publications() {
                             <p className="mb-1 text-xs">
                                 {item.authors}, <i>{item.citation}</i>
                             </p>
-                            <p className="mb-1 text-blue-500 underline">{item.link}</p>
+                            <p className="mb-1 text-blue-500 underline [overflow-wrap:anywhere]">
+                                {item.link}
+                            </p>
                         </div>
                     </div>
                     <div className="text-xs">
