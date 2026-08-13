@@ -19,16 +19,22 @@ export default function UpdatesIndex() {
                 <h2 className="text-3xl font-bold mb-6">All Updates</h2>
 
                 <ul className="list-disc pl-5 space-y-3 text-lg font-mono">
-                    {updates.map((u) => (
-                        <li key={u.version}>
-                            <Link
-                                href={`/updates/${u.version}`}
-                                className="text-blue-400 hover:underline"
-                            >
-                                MBX v{u.version} [{u.date}]
-                            </Link>
-                        </li>
-                    ))}
+                    {updates.map((u) => {
+                        const isMajorUpdate = u.releaseNotes.some(
+                            (note) => note.type.toLowerCase() === "major update",
+                        );
+
+                        return (
+                            <li key={u.version}>
+                                <Link
+                                    href={`/updates/${u.version}`}
+                                    className={`text-blue-400 hover:underline ${isMajorUpdate ? "font-bold" : ""}`}
+                                >
+                                    MBX v{u.version} [{u.date}]
+                                </Link>
+                            </li>
+                        );
+                    })}
                 </ul>
             </div>
         </div>

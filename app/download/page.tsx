@@ -1,7 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import content from "@/content/updates.json";
+
+const RELEASES_API_URL = "https://api.github.com/repos/paesanilab/MBX/releases?per_page=100";
 
 type Update = {
     version: string;
@@ -10,18 +12,86 @@ type Update = {
     type?: string;
     patch_notes?: string;
     download_link?: string;
+    showDownloadCount?: boolean;
 };
+
+type GitHubRelease = {
+    tag_name: string;
+    assets: { download_count: number }[];
+};
+
+type DownloadCounts = Record<string, number>;
 
 export default function Download() {
     const content_data: Update[] = content.updates;
+    const [downloadCounts, setDownloadCounts] = useState<DownloadCounts | null>(null);
+    const [downloadCountsFailed, setDownloadCountsFailed] = useState(false);
 
     const data: Update[] = [];
     for (const content_item of content_data) {
         const item = { ...content_item };
-        item.type ??= "Source ZIP";
         item.patch_notes ??= `https://github.com/paesanilab/MBX/releases/tag/v${item.version}`;
-        item.download_link ??= `https://github.com/paesanilab/MBX/archive/refs/tags/v${item.version}.zip`;
+        item.download_link ??=
+            item.showDownloadCount === false
+                ? `https://github.com/paesanilab/MBX/archive/refs/tags/v${item.version}.tar.gz`
+                : `https://github.com/paesanilab/MBX/releases/download/v${item.version}/mbx-${item.version}.tar.gz`;
         data.push(item);
+    }
+
+    useEffect(() => {
+        const controller = new AbortController();
+
+        async function getDownloadCounts() {
+            try {
+                const response = await fetch(RELEASES_API_URL, {
+                    headers: {
+                        Accept: "application/vnd.github+json",
+                        "X-GitHub-Api-Version": "2022-11-28",
+                    },
+                    signal: controller.signal,
+                });
+
+                if (!response.ok) {
+                    throw new Error(`GitHub returned ${response.status}`);
+                }
+
+                const releases = (await response.json()) as GitHubRelease[];
+                const counts = Object.fromEntries(
+                    releases.map((release) => [
+                        release.tag_name,
+                        release.assets.reduce((total, asset) => total + asset.download_count, 0),
+                    ]),
+                );
+
+                setDownloadCounts(counts);
+            } catch (error) {
+                if (error instanceof DOMException && error.name === "AbortError") {
+                    return;
+                }
+
+                setDownloadCountsFailed(true);
+            }
+        }
+
+        void getDownloadCounts();
+
+        return () => controller.abort();
+    }, []);
+
+    function renderDownloadCount(item: Update) {
+        if (item.showDownloadCount === false) {
+            return "—";
+        }
+
+        if (downloadCountsFailed) {
+            return "Unavailable";
+        }
+
+        if (downloadCounts === null) {
+            return "Loading…";
+        }
+
+        return (downloadCounts[`v${item.version}`] ?? 0).toLocaleString();
     }
 
     return (
@@ -36,11 +106,11 @@ export default function Download() {
                 <div className="hidden md:block">
                     {/* Header Row */}
                     <div className="flex justify-between bg-[#0C1E8C] items-center rounded-sm text-md font-bold h-[42px]">
-                        <span className="w-1/5 flex justify-center">Version</span>
-                        <span className="w-1/5 flex justify-center">Upload Date</span>
-                        <span className="w-1/5 flex justify-center">Release Notes</span>
-                        <span className="w-1/5 flex justify-center">Type Download</span>
-                        <span className="w-1/5 flex justify-center">Download</span>
+                        <span className="w-1/6 flex justify-center">Version</span>
+                        <span className="w-1/6 flex justify-center">Upload Date</span>
+                        <span className="w-1/6 flex justify-center">Release Notes</span>
+                        <span className="w-1/6 flex justify-center">Downloads</span>
+                        <span className="w-1/6 flex justify-center">Download</span>
                     </div>
 
                     {/* Data Rows */}
@@ -49,24 +119,29 @@ export default function Download() {
                             key={index}
                             className="flex justify-between h-[65px] rounded-sm items-center bg-[#4057E6] border-b border-[#4057E6] bg-opacity-10 text-md font-medium"
                         >
-                            <span className="w-1/5 flex justify-center">{item.version}</span>
-                            <span className="w-1/5 flex justify-center">{item.date}</span>
-                            <span className="w-1/5 flex justify-center">
+                            <span className="w-1/6 flex justify-center">{item.version}</span>
+                            <span className="w-1/6 flex justify-center">{item.date}</span>
+                            <span className="w-1/6 flex justify-center">
                                 <a
                                     href={item.patch_notes}
-                                    className="bg-[#60A7FF] text-white font-bold px-4 py-1 rounded-3xl hover:bg-[#508fd4] transition text-xs md:px-6 md:py-2 md:text-sm"
+                                    className="bg-[#60A7FF] text-white font-bold px-4 py-1 rounded-3xl hover:bg-[#508fd4] transition text-xs text-center md:px-6 md:py-2 md:text-sm"
                                 >
                                     Release Notes
                                 </a>
                             </span>
-                            <span className="w-1/5 flex justify-center">{item.type}</span>
-                            <span className="w-1/5 flex justify-center">
+                            <span
+                                className="w-1/6 flex justify-center"
+                                aria-label={`Downloads for version ${item.version}`}
+                            >
+                                {renderDownloadCount(item)}
+                            </span>
+                            <span className="w-1/6 flex justify-center">
                                 <a
                                     href={item.download_link}
                                     download
-                                    className="bg-[#60A7FF] text-white font-bold px-4 py-1 rounded-3xl hover:bg-[#508fd4] transition text-xs md:px-6 md:py-2 md:text-sm"
+                                    className="bg-[#60A7FF] text-whit  font-bold px-4 py-1 rounded-3xl hover:bg-[#508fd4] transition text-xs text-center md:px-6 md:py-2 md:text-sm"
                                 >
-                                    Download v{item.version}
+                                    Download v{item.version}.tgz
                                 </a>
                             </span>
                         </div>
@@ -91,6 +166,12 @@ export default function Download() {
                             <div className="flex justify-between mt-2">
                                 <span className="font-bold">Type Download:</span>
                                 <span>{item.type}</span>
+                            </div>
+                            <div className="flex justify-between mt-2">
+                                <span className="font-bold">Downloads:</span>
+                                <span aria-label={`Downloads for version ${item.version}`}>
+                                    {renderDownloadCount(item)}
+                                </span>
                             </div>
                             <div className="flex justify-center mt-4">
                                 <a

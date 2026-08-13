@@ -8,7 +8,7 @@
                     "type": "Major update",
                     "description": "MBX 1.4 contains reduced memory consumption and improved SIMD vectorization."
                 }
-            ],            
+            ],
             "changelog": [
                 "Everything from the intermediate releases 1.3.3, 1.3.5, and 1.3.12.",
                 "Dramatically increased performance of MB-pol 2-body and 3-body PIP evaluation by reducing memory consumption and exploiting SIMD vectorization. (See our preprint: https://chemrxiv.org/doi/full/10.26434/chemrxiv.15005580/v1)",
@@ -17,8 +17,59 @@
             ]
         },
         {
+            "version": "1.3.12",
+            "date": "2026-03-23",
+            "releaseNotes": [
+                {
+                    "type": "Minor update",
+                    "description": "MBX 1.3.12 collects the patch releases from v1.3.6 through v1.3.12."
+                }
+            ],
+            "changelog": [
+                "v1.3.6: Added Koide dispersion and NMA.",
+                "v1.3.7: Added the initial MBX+ASE plugin.",
+                "v1.3.8: Disabled a redundant PME calculation for non-periodic conditions.",
+                "v1.3.9: Added self-hosted tests in development mode.",
+                "v1.3.10: Removed use of the non-standard M_PI macro.",
+                "v1.3.11: Updated Windows support.",
+                "v1.3.12: Added more monomers to the ASE plugin."
+            ]
+        },
+        {
+            "version": "1.3.5",
+            "date": "2026-02-03",
+            "releaseNotes": [
+                {
+                    "type": "Minor update",
+                    "description": "MBX 1.3.5 adds changes supporting the official MBX package in LAMMPS."
+                }
+            ],
+            "changelog": [
+                "Backported changes from the official MBX+LAMMPS plugin.",
+                "Updated the Nhohman JSON to 3.12.0.",
+                "Simplified the LAMMPS input format for the official MBX package."
+            ]
+        },
+        {
+            "version": "1.3.3",
+            "date": "2025-12-19",
+            "releaseNotes": [
+                {
+                    "type": "Minor update",
+                    "description": "MBX 1.3.3 adds energy decomposition support and prepares MBX for its official LAMMPS integration."
+                }
+            ],
+            "changelog": [
+                "Added energy decomposition functions to the external-call library.",
+                "Increased the minimum C++ standard for LAMMPS to C++17.",
+                "Added changes for the upcoming official MBX+LAMMPS package.",
+                "Included minor bug fixes."
+            ]
+        },
+        {
             "version": "1.3.0",
             "date": "2025-07-09",
+            "showDownloadCount": false,
             "releaseNotes": [
                 {
                     "type": "Major update",
@@ -39,6 +90,7 @@
         {
             "version": "1.2.0",
             "date": "2024-08-20",
+            "showDownloadCount": false,
             "releaseNotes": [
                 {
                     "type": "Major update",
@@ -54,6 +106,7 @@
         {
             "version": "1.1.0",
             "date": "2024-04-22",
+            "showDownloadCount": false,
             "releaseNotes": [
                 {
                     "type": "Major update",

@@ -10,4 +10,10 @@ export default defineConfig({
             "@": path.resolve(__dirname, "."),
         },
     },
+        server: {
+        watch: {
+            usePolling: true,
+            interval: 1000,
+        },
+    },
 });
