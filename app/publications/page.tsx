@@ -19,15 +19,24 @@ export default function Publications() {
 
     function Item({ item }: { item: Publication }) {
         return (
-            <a href={item.link} className="flex min-w-0" target="_blank" rel="noreferrer">
-                <article className="bg-white text-black rounded-[40px] p-4 mb-6 min-w-0 w-full hover:ring-4 ring-blue-500 duration-100">
+            <a
+                href={item.link}
+                className="group flex min-w-0 rounded-[40px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#60A7FF] focus-visible:ring-offset-4 focus-visible:ring-offset-[#030625]"
+                target="_blank"
+                rel="noreferrer"
+            >
+                <article className="mb-6 min-w-0 w-full rounded-[40px] bg-gray-100 p-4 text-black ring-1 ring-transparent transition-all duration-200 group-hover:-translate-y-1 group-hover:bg-white group-hover:ring-[#60A7FF] group-hover:shadow-xl group-hover:shadow-blue-500/80 group-focus-visible:-translate-y-1 group-focus-visible:bg-white group-focus-visible:ring-[#60A7FF] group-focus-visible:shadow-xl group-focus-visible:shadow-blue-500/80">
                     <div>
                         {item.relationship && (
                             <p className="inline-block rounded-full bg-[#e8edff] px-3 py-1 mb-3 text-xs font-semibold text-[#243da5]">
                                 {item.relationship}
                             </p>
                         )}
-                        <h3 className="font-bold text-mb mb-2">{item.title}</h3>
+                        <div className="mb-2 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                            <h3 className="font-bold text-mb transition-colors group-hover:text-[#243da5] group-hover:underline group-focus-visible:text-[#243da5] group-focus-visible:underline underline-offset-4">
+                                {item.title}
+                            </h3>
+                        </div>
                         <div>
                             <p className="mb-1 text-xs">
                                 {item.authors}, <i>{item.citation}</i>
