@@ -73,6 +73,7 @@ export default function Download() {
             }
         }
 
+        // Temporarily disabled getDownloadCounts() until we have more downloads
         // void getDownloadCounts();
 
         return () => controller.abort();
