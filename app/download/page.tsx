@@ -73,7 +73,7 @@ export default function Download() {
             }
         }
 
-        void getDownloadCounts();
+        // void getDownloadCounts();
 
         return () => controller.abort();
     }, []);
@@ -109,7 +109,7 @@ export default function Download() {
                         <span className="w-1/6 flex justify-center">Version</span>
                         <span className="w-1/6 flex justify-center">Upload Date</span>
                         <span className="w-1/6 flex justify-center">Release Notes</span>
-                        <span className="w-1/6 flex justify-center">Downloads</span>
+                        {/* <span className="w-1/6 flex justify-center">Downloads</span> */}
                         <span className="w-1/6 flex justify-center">Download</span>
                     </div>
 
@@ -129,12 +129,12 @@ export default function Download() {
                                     Release Notes
                                 </a>
                             </span>
-                            <span
+                             {/* <span
                                 className="w-1/6 flex justify-center"
                                 aria-label={`Downloads for version ${item.version}`}
                             >
                                 {renderDownloadCount(item)}
-                            </span>
+                            </span> */}
                             <span className="w-1/6 flex justify-center">
                                 <a
                                     href={item.download_link}
