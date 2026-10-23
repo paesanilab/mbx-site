@@ -2,13 +2,11 @@
 
 import React, { useState } from "react";
 import Image from "@/components/image";
-import data from "@/content/about.json";
-
-type Person = { name: string; role: string; image: string };
+import { about as data } from "@/lib/content";
 
 export default function Contributors() {
-    const curData = data.current as Person[];
-    const forData = data.former as Person[];
+    const curData = data.current;
+    const forData = data.former;
     const [activeTab, setActiveTab] = useState<"current" | "former">("current");
     const contributors = activeTab === "current" ? curData : forData;
 

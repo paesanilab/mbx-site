@@ -11,6 +11,7 @@
     "serve": "vite preview",
     "lint": "tsc --noEmit",
     "test:e2e": "playwright test",
+    "test:content": "node --test --test-isolation=none tests/content/*.test.ts",
     "check-git-hooks": "node .secret-scan/secret-scan.js -- --check-git-hooks",
     "format": "prettier --write .",
     "test": "playwright test"
@@ -37,12 +38,14 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.6.0",
+    "gray-matter": "^4.0.3",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
     "tailwindcss": "^4.1.11",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.8.3",
-    "vite": "^7.0.4"
+    "vite": "^7.0.4",
+    "yaml": "^2.9.1"
   },
   "allowScripts": {
     "esbuild@0.28.2": true

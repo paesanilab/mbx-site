@@ -1,19 +1,12 @@
 "use client";
 
 import clsx from "clsx";
-import content from "@/content/updates.json";
+import { updates as content } from "@/lib/content";
 import { Link, usePathname } from "@/lib/navigation";
-
-type Update = {
-    version: string;
-    date: string;
-    releaseNotes: { type: string; description: string }[];
-    newFeatures: string[];
-};
 
 export function UpdatesSideBar() {
     const pathname = usePathname();
-    const updates = content.updates as unknown as Update[];
+    const updates = content.updates;
 
     return (
         <div className="bg-[#030625] text-white rounded-[20px] min-w-[205px] max-w-[288px] mt-[70px] ml-[45px]">

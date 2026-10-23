@@ -1,6 +1,7 @@
 import type { PlaywrightTestConfig } from "@playwright/test";
 
 const config: PlaywrightTestConfig = {
+    testMatch: "**/*.spec.ts",
     webServer: {
         command: "npm run dev",
         port: 5173,
@@ -12,12 +13,13 @@ const config: PlaywrightTestConfig = {
     workers: 10,
     reporter: "list",
     use: {
-        actionTimeout: 0,
+        baseURL: "http://localhost:5173",
+        actionTimeout: 10_000,
     },
 
     // For expect calls
     expect: {
-        timeout: 0,
+        timeout: 10_000,
     },
 };
 

@@ -6,26 +6,11 @@ import remarkMath from "remark-math";
 import supersub from "remark-supersub";
 import "../../github-markdown.css";
 
-import content from "@/content/tutorials.json";
-
-type Tutorial = {
-    heading: string;
-    markdown_text: string;
-    path?: string;
-};
+import { tutorials as content } from "@/lib/content";
 
 export default function SubTutorial() {
     const { path } = useParams<{ path: string }>();
-    const content_data: Tutorial[] = content.tutorials; // Importing again from the JSON file
-
-    const data: Tutorial[] = [];
-    for (const content_item of content_data) {
-        const item = { ...content_item };
-        item.path ??= content_item.heading.toLowerCase().replace(/ /g, "-");
-        data.push(item);
-    }
-
-    const update = data.find((u) => u.path === path);
+    const update = content.tutorials.find((tutorial) => tutorial.path === path);
     if (!update) {
         return (
             <div className="bg-[#030625] text-white min-h-screen h-full rounded-[40px] m-[20px] md:my-[70px] md:ml-[32px] md:mr-[45px]">

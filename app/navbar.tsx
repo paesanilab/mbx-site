@@ -6,6 +6,7 @@ import { useState } from "react";
 import Image from "@/components/image";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Link, usePathname } from "@/lib/navigation";
+import { tutorials as content_data } from "@/lib/content";
 
 const links = [
     { name: "Home", href: "/" },
@@ -17,21 +18,13 @@ const links = [
     { name: "YouTube", href: "https://www.youtube.com/@paesanilab8913/videos", external: true },
 ];
 
-
-// Generate the tutorials links from the tutorial content data
-type Tutorial = {
-    heading: string;
-    markdown_text: string;
-    path?: string;
-};
-import content_data from "@/content/tutorials.json";
+// Generate the tutorial links from the ordered content.
 const tutorialsLinks = [{ name: "Introduction", href: "/tutorials/" }];
-const data: { tutorials: Tutorial[] } = content_data;
+const data = content_data;
 for (const key of data.tutorials) {
-    const path = key.path ?? key.heading.toLowerCase().replace(/\s+/g, "-");
+    const path = key.path;
     tutorialsLinks.push({ name: key.heading, href: `/tutorials/${path}` });
 }
-
 
 export function NavBar() {
     const pathname = usePathname();
@@ -83,7 +76,10 @@ export function MobileNavBar() {
 
     return (
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger className="bg-[#111840] flex items-center justify-between p-2 m-4 rounded-lg">
+            <SheetTrigger
+                aria-label="Open navigation"
+                className="bg-[#111840] flex items-center justify-between p-2 m-4 rounded-lg"
+            >
                 <AlignJustify size={36} className="text-white" />
                 <Image src="/mbx-logo.png" alt="MBX logo" width={80} height={35} className="p-1" />
             </SheetTrigger>

@@ -1,17 +1,9 @@
 // app/updates/[version]/page.tsx
 import { useParams } from "react-router";
-import content from "@/content/updates.json";
+import { updates as content } from "@/lib/content";
 // import { FaGithub } from "react-icons/fa6";
 
-type Update = {
-    version: string;
-    date: string;
-    releaseNotes: { type: string; description: string }[];
-    changelog: string[];
-    type?: string;
-    patch_notes?: string;
-    download_link?: string;
-};
+import type { Update } from "@/lib/content";
 
 export default function UpdatePage() {
     const { version } = useParams<{ version: string }>();

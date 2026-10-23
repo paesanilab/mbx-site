@@ -1,19 +1,11 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import content from "@/content/updates.json";
+import { updates as content } from "@/lib/content";
 
 const RELEASES_API_URL = "https://api.github.com/repos/paesanilab/MBX/releases?per_page=100";
 
-type Update = {
-    version: string;
-    date: string;
-    releaseNotes: { type: string; description: string }[];
-    type?: string;
-    patch_notes?: string;
-    download_link?: string;
-    showDownloadCount?: boolean;
-};
+import type { Update } from "@/lib/content";
 
 type GitHubRelease = {
     tag_name: string;
@@ -130,7 +122,7 @@ export default function Download() {
                                     Release Notes
                                 </a>
                             </span>
-                             {/* <span
+                            {/* <span
                                 className="w-1/6 flex justify-center"
                                 aria-label={`Downloads for version ${item.version}`}
                             >

@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import React, { useState } from "react";
 
-import data from "@/content/faq.json";
+import { faq as data } from "@/lib/content";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import "../github-markdown.css";

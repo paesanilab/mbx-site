@@ -1,6 +1,6 @@
 import Molecular from "@/components/molecular";
 
-import data from "@/content/home.json";
+import { home as data } from "@/lib/content";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import "./github-markdown.css";

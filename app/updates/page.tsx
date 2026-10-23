@@ -1,17 +1,9 @@
 import React from "react";
-import content from "@/content/updates.json";
+import { updates as content } from "@/lib/content";
 import { Link } from "@/lib/navigation";
 
-type Update = {
-    id: string;
-    version: string;
-    date: string;
-    releaseNotes: { type: string; description: string }[];
-    newFeatures: string[];
-};
-
 export default function UpdatesIndex() {
-    const updates = content.updates as unknown as Update[];
+    const updates = content.updates;
 
     return (
         <div className="bg-[#030625] text-white min-h-screen rounded-[40px] m-[20px] md:m-[70px]">

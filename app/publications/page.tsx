@@ -1,17 +1,8 @@
 import React from "react";
 import Image from "@/components/image";
-import data from "@/content/publications.json";
+import { publications as data } from "@/lib/content";
 
-type Publication = {
-    title: string;
-    authors: string;
-    date: string;
-    citation: string;
-    link: string;
-    description: string;
-    img_src: string;
-    relationship?: string;
-};
+import type { Publication } from "@/lib/content";
 
 export default function Publications() {
     const publications = data.items;

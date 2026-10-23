@@ -3,7 +3,7 @@ import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import "../github-markdown.css";
 
-import data from "@/content/tutorials.json";
+import { tutorials as data } from "@/lib/content";
 
 export default function MainTutorial() {
     const item = data.introduction;

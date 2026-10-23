@@ -2,21 +2,15 @@
 
 import clsx from "clsx";
 
-import content_data from "@/content/tutorials.json";
+import { tutorials as content_data } from "@/lib/content";
 import { Link, usePathname } from "@/lib/navigation";
-
-type Tutorial = {
-    heading: string;
-    markdown_text: string;
-    path?: string;
-};
 
 const links = [{ name: "Introduction", href: "/tutorials" }];
 
-const data: { tutorials: Tutorial[] } = content_data;
+const data = content_data;
 
 for (const key of data.tutorials) {
-    const path = key.path ?? key.heading.toLowerCase().replace(/\s+/g, "-");
+    const path = key.path;
     links.push({ name: key.heading, href: `/tutorials/${path}` });
 }
 
